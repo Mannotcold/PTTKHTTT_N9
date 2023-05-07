@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="BanSanPhamDichVu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="BanSanPhamDichVu.Designer.cs">
+      <DependentUpon>BanSanPhamDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BanSPDVtaicho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BanSPDVtaicho.Designer.cs">
+      <DependentUpon>BanSPDVtaicho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="LeTan.cs">
       <SubType>Form</SubType>
@@ -66,8 +78,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="BanSanPhamDichVu.resx">
+      <DependentUpon>BanSanPhamDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BanSPDVtaicho.resx">
+      <DependentUpon>BanSPDVtaicho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LeTan.resx">
       <DependentUpon>LeTan.cs</DependentUpon>

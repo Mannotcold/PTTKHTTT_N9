@@ -11,16 +11,16 @@ using System.Data.SqlClient;
 
 namespace PTTKHTTT
 {
-    public partial class Form1 : Form
+    public partial class DangNhap : Form
     {
-        public Form1()
+        public DangNhap()
         {
             InitializeComponent();
         }
 
         SqlConnection connection;
         SqlCommand command;
-        string str = "Data Source=LAPTOP-O8J01RU8;Initial Catalog=PTTKHTTT;Integrated Security=True";
+        string str = "Data Source=.;Initial Catalog=PTTKHTTT;Integrated Security=True";
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
         private void btn_Login_Click(object sender, EventArgs e)

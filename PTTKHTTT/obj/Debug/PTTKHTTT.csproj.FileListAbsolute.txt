@@ -23,3 +23,4 @@ C:\Users\boost\OneDrive\Máy tính\DA_PTTK\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHT
 C:\Users\boost\OneDrive\Máy tính\DA_PTTK\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.csproj.CoreCompileInputs.cache
 C:\Users\boost\OneDrive\Máy tính\DA_PTTK\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.exe
 C:\Users\boost\OneDrive\Máy tính\DA_PTTK\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.pdb
+C:\Users\boost\OneDrive\Máy tính\DA_PTTK\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.BanSanPhamDichVu.resources

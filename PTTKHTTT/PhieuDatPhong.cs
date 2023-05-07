@@ -35,6 +35,7 @@ namespace PTTKHTTT
             table.Clear();
             adapter.Fill(table);
             dataGridView1.DataSource = table;
+            //hhhh
         }
        
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -60,31 +61,33 @@ namespace PTTKHTTT
             text1.Text = null;
             richTextBox1.Text = null;
         }
-
+        string MaPhieuDP;
         private void Them_Click(object sender, EventArgs e)
         {
-            //connection = new SqlConnection(str);
-            //connection.Open();
-            //SqlCommand com = new SqlCommand();
-            ////Lấy dữ liệu về từ kết quả câu lệnh trên
-            ////ExecuteReader() dùng với select
-            ////ExecuteNonquery(); với inserrt update delete
-            ////com.ExecuteNonQuery();
-            //DateTime date;
-            //date = dateTimePicker1.Value.AddYears(+1);
-            //com.CommandType = CommandType.Text;
-            ////com.CommandText = "insert into HOPDONG(MAHD, MADT, MANV, NGAYLAP, THOIGIANHIEULUC, TAIKHOANNGANHANG) VALUES ('" + MAHD + "','" + MADT + "','MANV1','" + dateTimePicker1.Text + "','" + date + "','" + textBox3.Text + "')";
-            //com.Connection = connection;
-            ////loaddata();
-            //int kq = com.ExecuteNonQuery();
-            //if (kq > 0)
-            //{
-            //    MessageBox.Show("Ký hợp đồng thành công! Vui lòng chờ xét duyệt. ");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Ký hợp đồng thất bại! .");
-            //}
+            MessageBox.Show(comboBox2.Text.ToString());
+            string TinhTrang = comboBox2.Text.ToString();
+            connection = new SqlConnection(str);
+            connection.Open();
+            SqlCommand com = new SqlCommand();
+            //Lấy dữ liệu về từ kết quả câu lệnh trên
+            //ExecuteReader() dùng với select
+            //ExecuteNonquery(); với inserrt update delete
+            //com.ExecuteNonQuery();
+            MaPhieuDP = "30";
+            com.CommandType = CommandType.Text;
+            com.CommandText = "insert into  PHIEUDATPHONG (MaPhieuDP, TinhTrangDuyet,NgayLap,NgayDen,NgayDi,SoDemLuuTru, CacYeuCauDacBiet, LoaiKH) VALUES ('" + MaPhieuDP + "','" + comboBox2.Text.ToString() + "','" + dateTimePicker3.Text + "','" + dateTimePicker1.Text + "','" + dateTimePicker2.Text + "','" + text8.Text + "','" + richTextBox1.Text + "','" + comboBox2.Text + "')";
+            com.Connection = connection;
+            //loaddata();
+            int kq = com.ExecuteNonQuery();
+            if (kq > 0)
+            {
+                MessageBox.Show("Thêm phiếu đặt phòng thành công. ");
+            }
+            else
+            {
+                MessageBox.Show("Thêm phiếu đặt phòng thất bại! .");
+            }
+            loaddata();
         }
 
         private void PhieuDatPhong_Load(object sender, EventArgs e)
@@ -98,8 +101,8 @@ namespace PTTKHTTT
             int i;
             i = dataGridView1.CurrentRow.Index;
             text1.Text = dataGridView1.Rows[i].Cells[0].Value.ToString();
-            text2.Text = dataGridView1.Rows[i].Cells[8].Value.ToString();
-            text3.Text = dataGridView1.Rows[i].Cells[11].Value.ToString();
+            text2.Text = dataGridView1.Rows[i].Cells[7].Value.ToString();
+            text3.Text = dataGridView1.Rows[i].Cells[8].Value.ToString();
             text4.Text = dataGridView1.Rows[i].Cells[10].Value.ToString();
             text5.Text = dataGridView1.Rows[i].Cells[9].Value.ToString();
             text8.Text = dataGridView1.Rows[i].Cells[5].Value.ToString();
@@ -109,7 +112,7 @@ namespace PTTKHTTT
             comboBox1.Text = dataGridView1.Rows[i].Cells[11].Value.ToString();
             comboBox2.Text = dataGridView1.Rows[i].Cells[1].Value.ToString();
             richTextBox1.Text = dataGridView1.Rows[i].Cells[6].Value.ToString();
-            //text9.Text = dataGridView1.Rows[i].Cells[9].Value.ToString();
+            
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -17,8 +17,9 @@ namespace PTTKHTTT
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new DangNhap());
-            // Application.Run(new BanSanPhamDichVu());
-            Application.Run(new BanSPDVtaicho());
+            Application.Run(new BanSanPhamDichVu());
+            //Application.Run(new BanSPDVtaicho());
+            //Application.Run(new LeTan());
         }
         //push len demo
     }

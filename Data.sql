@@ -37,8 +37,16 @@ create table DanhSachSanPhamVaDichVu  (
 	ThoiGianMo INT,
 	ThoiGianDong INT
 );
+DELETE FROM DanhSachSanPhamVaDichVu
+WHERE MaDV = 'DV001';
+---DU LIEU DEMO CUA BANH DANH SACH SAN PHAM VA DI VU
 insert into DanhSachSanPhamVaDichVu(MaDV,TenDV,DonGiaDV,ThoiGianMo,ThoiGianDong)
-values ('DV001','Spa','100000','6','24')
+values
+('DV001','AN UONG',150000,0,24),
+('DV002','SPA',300000,0,24),
+('DV003','GYM',100000,0,24),
+('DV004','KARAOKE',100000,0,24),
+('DV005','BI-A',100000,0,24);
 
 CREATE TABLE PHIEUDATPHONG
 (
@@ -57,11 +65,18 @@ CREATE TABLE PHIEUDATPHONG
    PRIMARY KEY (MaPhieuDP)
 );
 
+DELETE FROM PHIEUDATPHONG
+WHERE MaPhieuDP = 'PH001';
+DELETE FROM PHIEUDATPHONG
+WHERE MaPhieuDP = 'PH002';
+SELECT * FROM PHIEUDATPHONG;
 insert into PHIEUDATPHONG (MaPhieuDP, TinhTrangDuyet,NgayLap,NgayDen,NgayDi,SoDemLuuTru, CacYeuCauDacBiet,MaKHDaiDien,TenKHDaiDien,CMNDKHDaiDien, SĐTKHDaiDien, LoaiKH) 
-values ('PH002', 'Chưa duyệt','2023-05-07','2023-05-07','2023-05-07',2,'KH001','Man','4114478448','4114478448', 'fefdedfsfsdfsdfd', 'Doan');
-insert into PHIEUDATPHONG (MaPhieuDP, TinhTrangDuyet,NgayLap,NgayDen,NgayDi,SoDemLuuTru, CacYeuCauDacBiet,MaKHDaiDien,TenKHDaiDien,CMNDKHDaiDien, SĐTKHDaiDien, LoaiKH) 
-values ('PH001', 'Chưa duyệt','2023-05-07','2023-05-07','2023-05-07',2,'KH001','Man','4114478448','4114478448', 'fefdedfsfsdfsdfd', 'le');
-select * from PHIEUDATPHONG;
+values 
+('PH001', 'DA DUYET','2023-05-07','2023-05-07','2023-05-07',2,'KHONG CO','KH001','DANH','12345','4114478448', 'DOAN'),
+('PH002', 'DA DUYET','2023-05-07','2023-05-07','2023-05-07',2,'KHONG CO','KH001','MAN','12345','5444365657', 'LE'),
+('PH003', 'DA DUYET','2023-05-07','2023-05-07','2023-05-07',2,'KHONG CO','KH001','LAM','12345','5565476556', 'LE'),
+('PH004', 'DA DUYET','2023-05-07','2023-05-07','2023-05-07',2,'KHONG CO','KH001','TRACH','12345','56556565556', 'LE'),
+('PH005', 'DA DUYET','2023-05-07','2023-05-07','2023-05-07',2,'KHONG CO','KH001','KHANH','12345','56565656565', 'LE');
 CREATE TABLE TAIKHOAN
 (
    TEN_TK char(10) NOT NULL,

@@ -25,7 +25,7 @@ create table DonViLuHanh (
 	SoDienThoaiDVLH VARCHAR(15)
 );
 create table PhieuDangKiDichVu (
-	MaPhieuDangKiDichVu INT PRIMARY KEY,
+	MaPhieuDangKiDichVu CHAR(10) PRIMARY KEY,
 	ThoiGianSuDung VARCHAR(50),
 	CacYeuCauDacBiet VARCHAR(50)
 );

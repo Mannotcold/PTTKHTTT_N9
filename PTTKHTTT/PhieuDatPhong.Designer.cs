@@ -48,7 +48,7 @@ namespace PTTKHTTT
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.Xoa = new System.Windows.Forms.Button();
             this.Them = new System.Windows.Forms.Button();
             this.LamMoi = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
@@ -216,7 +216,7 @@ namespace PTTKHTTT
             this.groupBox2.Controls.Add(this.button7);
             this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Controls.Add(this.Xoa);
             this.groupBox2.Controls.Add(this.Them);
             this.groupBox2.Controls.Add(this.LamMoi);
             this.groupBox2.Controls.Add(this.label14);
@@ -290,15 +290,17 @@ namespace PTTKHTTT
             this.button5.TabIndex = 101;
             this.button5.Text = "Sửa";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button4
+            // Xoa
             // 
-            this.button4.Location = new System.Drawing.Point(314, 425);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(127, 27);
-            this.button4.TabIndex = 100;
-            this.button4.Text = "Xóa";
-            this.button4.UseVisualStyleBackColor = true;
+            this.Xoa.Location = new System.Drawing.Point(314, 425);
+            this.Xoa.Name = "Xoa";
+            this.Xoa.Size = new System.Drawing.Size(127, 27);
+            this.Xoa.TabIndex = 100;
+            this.Xoa.Text = "Xóa";
+            this.Xoa.UseVisualStyleBackColor = true;
+            this.Xoa.Click += new System.EventHandler(this.Xoa_Click);
             // 
             // Them
             // 
@@ -570,7 +572,7 @@ namespace PTTKHTTT
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button Xoa;
         private System.Windows.Forms.Button Them;
         private System.Windows.Forms.Button LamMoi;
         private System.Windows.Forms.Label label14;

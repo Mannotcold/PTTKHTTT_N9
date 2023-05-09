@@ -16,8 +16,17 @@ namespace PTTKHTTT
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             //<<<<<<< HEAD
            // Application.Run(new DangNhap());
+=======
+//<<<<<<< HEAD
+            Application.Run(new DangNhap());
+            //Application.Run(new BanSanPhamDichVu());
+            //Application.Run(new BanSPDVtaicho());
+//=======
+            //Application.Run(new DangNhap());
+>>>>>>> a40099771db949da01de9cf36809ed74ea67aff1
             Application.Run(new BanSanPhamDichVu());
             //Application.Run(new BanSPDVtaicho());
             //=======
@@ -25,7 +34,11 @@ namespace PTTKHTTT
             //Application.Run(new BanSanPhamDichVu());
             //Application.Run(new BanSPDVtaicho());
             //Application.Run(new LeTan());
+<<<<<<< HEAD
             //>>>>>>> refs/remotes/origin/master
+=======
+//>>>>>>> refs/remotes/origin/master
+>>>>>>> a40099771db949da01de9cf36809ed74ea67aff1
         }
         //trach vua sua
     }

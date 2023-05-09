@@ -64,11 +64,19 @@
     <Compile Include="DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="DanhSachPhong.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DanhSachPhong.Designer.cs">
       <DependentUpon>DanhSachPhong.cs</DependentUpon>
+=======
+    <Compile Include="PhieuVanChuyenHanhLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhieuVanChuyenHanhLy.Designer.cs">
+      <DependentUpon>PhieuVanChuyenHanhLy.cs</DependentUpon>
+>>>>>>> 532ee273b723d8193ab1aba93faaba646ad75231
     </Compile>
     <Compile Include="LeTan.cs">
       <SubType>Form</SubType>
@@ -101,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PhieuDatPhong.resx">
       <DependentUpon>PhieuDatPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhieuVanChuyenHanhLy.resx">
+      <DependentUpon>PhieuVanChuyenHanhLy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

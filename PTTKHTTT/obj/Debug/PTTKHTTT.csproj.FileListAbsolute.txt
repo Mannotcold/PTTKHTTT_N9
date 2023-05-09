@@ -2,7 +2,6 @@ D:\Năm3\K2-N3\PTTKHTTT\DAPTTKHT\PTTKHTTT\bin\Debug\PTTKHTTT.exe.config
 D:\Năm3\K2-N3\PTTKHTTT\DAPTTKHT\PTTKHTTT\bin\Debug\PTTKHTTT.exe
 D:\Năm3\K2-N3\PTTKHTTT\DAPTTKHT\PTTKHTTT\bin\Debug\PTTKHTTT.pdb
 D:\Năm3\K2-N3\PTTKHTTT\DAPTTKHT\PTTKHTTT\obj\Debug\PTTKHTTT.csproj.AssemblyReference.cache
-D:\Năm3\K2-N3\PTTKHTTT\DAPTTKHT\PTTKHTTT\obj\Debug\PTTKHTTT.Form1.resources
 D:\Năm3\K2-N3\PTTKHTTT\DAPTTKHT\PTTKHTTT\obj\Debug\PTTKHTTT.Properties.Resources.resources
 D:\Năm3\K2-N3\PTTKHTTT\DAPTTKHT\PTTKHTTT\obj\Debug\PTTKHTTT.csproj.GenerateResource.cache
 D:\Năm3\K2-N3\PTTKHTTT\DAPTTKHT\PTTKHTTT\obj\Debug\PTTKHTTT.csproj.CoreCompileInputs.cache
@@ -25,6 +24,7 @@ C:\Users\boost\OneDrive\Máy tính\DA_PTTK\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHT
 C:\Users\boost\OneDrive\Máy tính\DA_PTTK\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.pdb
 C:\Users\boost\OneDrive\Máy tính\DA_PTTK\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.BanSanPhamDichVu.resources
 C:\Users\boost\OneDrive\Máy tính\DA_PTTK\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.BanSPDVtaicho.resources
+<<<<<<< HEAD
 C:\Users\cuong\source\repos\PTTKHTTT_N9\PTTKHTTTN9\PTTKHTTT\bin\Debug\PTTKHTTT.exe.config
 C:\Users\cuong\source\repos\PTTKHTTT_N9\PTTKHTTTN9\PTTKHTTT\bin\Debug\PTTKHTTT.exe
 C:\Users\cuong\source\repos\PTTKHTTT_N9\PTTKHTTTN9\PTTKHTTT\bin\Debug\PTTKHTTT.pdb
@@ -40,3 +40,20 @@ C:\Users\cuong\source\repos\PTTKHTTT_N9\PTTKHTTTN9\PTTKHTTT\obj\Debug\PTTKHTTT.c
 C:\Users\cuong\source\repos\PTTKHTTT_N9\PTTKHTTTN9\PTTKHTTT\obj\Debug\PTTKHTTT.exe
 C:\Users\cuong\source\repos\PTTKHTTT_N9\PTTKHTTTN9\PTTKHTTT\obj\Debug\PTTKHTTT.pdb
 C:\Users\cuong\Source\Repos\PTTKHTTT_N9\PTTKHTTTN9\PTTKHTTT\obj\Debug\PTTKHTTT.DanhSachPhong.resources
+=======
+D:\Năm3\K2-N3\PTTKHTTT\DAPTTKHT\PTTKHTTT\obj\Debug\PTTKHTTT.BanSanPhamDichVu.resources
+D:\Năm3\K2-N3\PTTKHTTT\DAPTTKHT\PTTKHTTT\obj\Debug\PTTKHTTT.BanSPDVtaicho.resources
+D:\Năm3\K2-N3\PTTKHTTT\DAPTTKHT\PTTKHTTT\obj\Debug\PTTKHTTT.DangNhap.resources
+D:\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.csprojAssemblyReference.cache
+D:\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.BanSanPhamDichVu.resources
+D:\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.BanSPDVtaicho.resources
+D:\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.DangNhap.resources
+D:\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.LeTan.resources
+D:\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.PhieuDatPhong.resources
+D:\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.PhieuVanChuyenHanhLy.resources
+D:\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.Properties.Resources.resources
+D:\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.csproj.GenerateResource.cache
+D:\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.csproj.CoreCompileInputs.cache
+D:\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.exe
+D:\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.pdb
+>>>>>>> 532ee273b723d8193ab1aba93faaba646ad75231

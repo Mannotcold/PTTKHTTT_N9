@@ -64,30 +64,62 @@ namespace PTTKHTTT
         string MaPhieuDP;
         private void Them_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(comboBox2.Text.ToString());
-            string TinhTrang = comboBox2.Text.ToString();
-            connection = new SqlConnection(str);
-            connection.Open();
-            SqlCommand com = new SqlCommand();
-            //Lấy dữ liệu về từ kết quả câu lệnh trên
-            //ExecuteReader() dùng với select
-            //ExecuteNonquery(); với inserrt update delete
-            //com.ExecuteNonQuery();
-            MaPhieuDP = "30";
-            com.CommandType = CommandType.Text;
-            com.CommandText = "insert into  PHIEUDATPHONG (MaPhieuDP, TinhTrangDuyet,NgayLap,NgayDen,NgayDi,SoDemLuuTru, CacYeuCauDacBiet, LoaiKH) VALUES ('" + MaPhieuDP + "','" + comboBox2.Text.ToString() + "','" + dateTimePicker3.Text + "','" + dateTimePicker1.Text + "','" + dateTimePicker2.Text + "','" + text8.Text + "','" + richTextBox1.Text + "','" + comboBox2.Text + "')";
-            com.Connection = connection;
-            //loaddata();
-            int kq = com.ExecuteNonQuery();
-            if (kq > 0)
+            DialogResult rs = MessageBox.Show("Bạn có muốn thêm hay không", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            if (rs == DialogResult.Yes)
             {
-                MessageBox.Show("Thêm phiếu đặt phòng thành công. ");
+                MessageBox.Show(comboBox2.Text.ToString());
+                string TinhTrang = comboBox2.Text.ToString();
+                connection = new SqlConnection(str);
+                connection.Open();
+                SqlCommand com = new SqlCommand();
+                //Lấy dữ liệu về từ kết quả câu lệnh trên
+                //ExecuteReader() dùng với select
+                //ExecuteNonquery(); với inserrt update delete
+                //com.ExecuteNonQuery();
+                MAPHIEUDP();
+                com.CommandType = CommandType.Text;
+                com.CommandText = "insert into  PHIEUDATPHONG (MaPhieuDP, TinhTrangDuyet,NgayLap,NgayDen,NgayDi,SoDemLuuTru, CacYeuCauDacBiet, LoaiKH) VALUES ('" + MaPhieuDP + "','" + comboBox2.Text.ToString() + "','" + dateTimePicker3.Text + "','" + dateTimePicker1.Text + "','" + dateTimePicker2.Text + "','" + text8.Text + "','" + richTextBox1.Text + "','" + comboBox2.Text + "')";
+                com.Connection = connection;
+                //loaddata();
+                int kq = com.ExecuteNonQuery();
+                if (kq > 0)
+                {
+                    MessageBox.Show("Thêm phiếu đặt phòng thành công. ");
+                }
+                else
+                {
+                    MessageBox.Show("Thêm phiếu đặt phòng thất bại! .");
+                }
+                loaddata();
+
             }
             else
             {
-                MessageBox.Show("Thêm phiếu đặt phòng thất bại! .");
+
             }
+            
+        }
+
+
+        private void MAPHIEUDP()
+        {
+            connection = new SqlConnection(str);
+            connection.Open();
             loaddata();
+
+            //Tạo mã đơn hàng mới
+            string sql = "select COUNT(*) from PHIEUDATPHONG";
+
+            SqlCommand com = new SqlCommand(sql, connection);
+            //Lấy dữ liệu về từ kết quả câu lệnh trên
+            //ExecuteReader() dùng với select
+            //ExecuteNonquery(); với inserrt update delete
+            SqlDataReader dta = com.ExecuteReader();
+            while (dta.Read())
+            {
+                int madh = dta.GetInt32(0) + 1;
+                MaPhieuDP = "PH00" + madh.ToString();
+            }
         }
 
         private void PhieuDatPhong_Load(object sender, EventArgs e)
@@ -117,15 +149,98 @@ namespace PTTKHTTT
 
         private void button2_Click(object sender, EventArgs e)
         {
-            connection = new SqlConnection(str);
-            connection.Open();
-            string TenKHDaiDien = textBox6.Text;
-            command = connection.CreateCommand();
-            command.CommandText = "select * from PHIEUDATPHONG WHERE TenKHDaiDien = '" + TenKHDaiDien + "'";
-            adapter.SelectCommand = command;
-            table.Clear();
-            adapter.Fill(table);
-            dataGridView1.DataSource = table;
+            if (textBox6.Text == "")
+            {
+                loaddata();
+            }
+            else
+            {
+                connection = new SqlConnection(str);
+                connection.Open();
+                string TenKHDaiDien = textBox6.Text;
+                command = connection.CreateCommand();
+                command.CommandText = "select * from PHIEUDATPHONG WHERE TenKHDaiDien = '" + TenKHDaiDien + "'";
+                adapter.SelectCommand = command;
+                table.Clear();
+                adapter.Fill(table);
+                dataGridView1.DataSource = table;
+            }
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            DialogResult rs = MessageBox.Show("Bạn có muốn cập nhật hay không", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            if (rs == DialogResult.Yes)
+            {
+                MessageBox.Show(comboBox2.Text.ToString());
+                string TinhTrang = comboBox2.Text.ToString();
+                connection = new SqlConnection(str);
+                connection.Open();
+                SqlCommand com = new SqlCommand();
+                //Lấy dữ liệu về từ kết quả câu lệnh trên
+                //ExecuteReader() dùng với select
+                //ExecuteNonquery(); với inserrt update delete
+                //com.ExecuteNonQuery();
+                MaPhieuDP = "30";
+                com.CommandType = CommandType.Text;
+
+                com.CommandText = "Update PHIEUDATPHONG set TinhTrangDuyet = '" + comboBox2.Text.ToString() + "',NgayLap = '" + dateTimePicker3.Text + "',NgayDen = '" + dateTimePicker1.Text + "', NgayDi = '" + dateTimePicker2.Text + "' ,SoDemLuuTru = '" + text8.Text + "', CacYeuCauDacBiet = '" + richTextBox1.Text + "', LoaiKH = '" + comboBox2.Text + "' where MAPHIEUDP = '" + text1.Text + "'";
+                com.Connection = connection;
+                //loaddata();
+                int kq = com.ExecuteNonQuery();
+                if (kq > 0)
+                {
+                    MessageBox.Show("Cập nhật phiếu đặt phòng thành công. ");
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật phiếu đặt phòng thất bại! .");
+                }
+                loaddata();
+
+            }
+            else
+            {
+
+            }
+            
+        }
+
+        private void Xoa_Click(object sender, EventArgs e)
+        {
+            DialogResult rs = MessageBox.Show("Bạn có muốn xóa hay không", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            if (rs == DialogResult.Yes)
+            {
+                connection = new SqlConnection(str);
+                connection.Open();
+                SqlCommand com = new SqlCommand();
+                string now = DateTime.Now.ToString();
+                //Lấy dữ liệu về từ kết quả câu lệnh trên
+                //ExecuteReader() dùng với select
+                //ExecuteNonquery(); với inserrt update delete
+                //com.ExecuteNonQuery();
+
+                com.CommandType = CommandType.Text;
+                com.CommandText = "delete from PHIEUDATPHONG where MAPHIEUDP = '" + text1.Text + "'";
+                com.Connection = connection;
+                //loaddata();
+                int kq = com.ExecuteNonQuery();
+                if (kq > 0)
+                {
+                    MessageBox.Show("Xóa thành công! ");
+                }
+                else
+                {
+                    MessageBox.Show("Xóa thất bại! .");
+                }
+
+            }
+            else
+            {
+
+            }
+            
         }
     }
 }

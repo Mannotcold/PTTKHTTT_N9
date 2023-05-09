@@ -1,52 +1,6 @@
 ﻿create database PTTKHTTT;
 use PTTKHTTT;
 go
-create table PhieuDangKiDatTour (
-	MaPhieuDangKiDatTour CHAR(10) PRIMARY KEY,
-	MaTour CHAR(10),
-	MaKH CHAR(10),
-	TenKH VARCHAR(50),
-	ThoiGianKhoiHanh VARCHAR(50),
-	SoNguoiThamGia INT,
-	ThongTinNguoiThamGia VARCHAR(50),
-	PhuongThucDiChuyen  VARCHAR(20),
-	CacNhuCauDacBiet VARCHAR(50)
-);
-create table DanhSachTourDuLich (
-	MaTour CHAR(10) PRIMARY KEY,
-	TenTour CHAR(10),
-	DonGiaTour FLOAT,
-	TenDVLH VARCHAR(50)
-);
-create table DonViLuHanh (
-	MaDVLH CHAR(10) PRIMARY KEY,
-	TenDVLH VARCHAR(50),
-	EmailDVLH VARCHAR(50),
-	SoDienThoaiDVLH VARCHAR(15)
-);
-create table PhieuDangKiDichVu (
-	MaPhieuDangKiDichVu CHAR(10) PRIMARY KEY,
-	ThoiGianSuDung VARCHAR(50),
-	CacYeuCauDacBiet VARCHAR(50)
-);
-
-create table DanhSachSanPhamVaDichVu  (
-	MaDV CHAR(10) PRIMARY KEY,
-	TenDV VARCHAR(50),
-	DonGiaDV FLOAT,
-	ThoiGianMo INT,
-	ThoiGianDong INT
-);
-DELETE FROM DanhSachSanPhamVaDichVu
-WHERE MaDV = 'DV001';
----DU LIEU DEMO CUA BANH DANH SACH SAN PHAM VA DI VU
-insert into DanhSachSanPhamVaDichVu(MaDV,TenDV,DonGiaDV,ThoiGianMo,ThoiGianDong)
-values
-('DV001','AN UONG',150000,0,24),
-('DV002','SPA',300000,0,24),
-('DV003','GYM',100000,0,24),
-('DV004','KARAOKE',100000,0,24),
-('DV005','BI-A',100000,0,24);
 
 CREATE TABLE PHIEUDATPHONG
 (
@@ -149,13 +103,61 @@ CREATE TABLE PHANHOI
    TrangThai nvarchar(50)
 );
 
--- create----------------------------------------------------
+create table PhieuDangKiDatTour (
+	MaPhieuDangKiDatTour CHAR(10) PRIMARY KEY,
+	MaTour CHAR(10),
+	MaKH CHAR(10),
+	TenKH VARCHAR(50),
+	ThoiGianKhoiHanh VARCHAR(50),
+	SoNguoiThamGia INT,
+	ThongTinNguoiThamGia VARCHAR(50),
+	PhuongThucDiChuyen  VARCHAR(20),
+	CacNhuCauDacBiet VARCHAR(50)
+);
+create table DanhSachTourDuLich (
+	MaTour CHAR(10) PRIMARY KEY,
+	TenTour CHAR(10),
+	DonGiaTour FLOAT,
+	TenDVLH VARCHAR(50)
+);
+create table DonViLuHanh (
+	MaDVLH CHAR(10) PRIMARY KEY,
+	TenDVLH VARCHAR(50),
+	EmailDVLH VARCHAR(50),
+	SoDienThoaiDVLH VARCHAR(15)
+);
+create table PhieuDangKiDichVu (
+	MaPhieuDangKiDichVu CHAR(10) PRIMARY KEY,
+	ThoiGianSuDung VARCHAR(50),
+	CacYeuCauDacBiet VARCHAR(50)
+);
 
+create table DanhSachSanPhamVaDichVu  (
+	MaDV CHAR(10) PRIMARY KEY,
+	TenDV VARCHAR(50),
+	DonGiaDV FLOAT,
+	ThoiGianMo INT,
+	ThoiGianDong INT
+);
+DELETE FROM DanhSachSanPhamVaDichVu
+WHERE MaDV = 'DV001';
+---DU LIEU DEMO CUA BANH DANH SACH SAN PHAM VA DI VU
+insert into DanhSachSanPhamVaDichVu(MaDV,TenDV,DonGiaDV,ThoiGianMo,ThoiGianDong)
+values
+('DV001','AN UONG',150000,0,24),
+('DV002','SPA',300000,0,24),
+('DV003','GYM',100000,0,24),
+('DV004','KARAOKE',100000,0,24),
+('DV005','BI-A',100000,0,24);
+
+
+-- create----------------------------------------------------
+--DROP TABLE HoaDon
 CREATE TABLE HoaDon (
   MaHoaDon char(10) PRIMARY KEY,
   NgayLap DATE,
   TongTien DECIMAL(18,2),
-  TrangThaiThanhToan INT,
+  TrangThaiThanhToan VARCHAR(15),
   MaPhieuDP char(10) NOT NULL,
   FOREIGN KEY (MaPhieuDP) REFERENCES PhieuDatPhong(MaPhieuDP)
 );
@@ -167,7 +169,7 @@ CREATE TABLE LienPhieuDichVu (
   GiaTien DECIMAL(18,2),
   SoLuong INT,
   MaDV CHAR(10),
-  MaPhieuDangKiDichVu INT,
+  MaPhieuDangKiDichVu CHAR(10),
   FOREIGN KEY (MaDV) REFERENCES DanhSachSanPhamVaDichVu(MaDV),
   FOREIGN KEY (MaPhieuDangKiDichVu) REFERENCES PhieuDangKiDichVu(MaPhieuDangKiDichVu)
 );
@@ -208,3 +210,56 @@ VALUES ('HS002', 'LP002');
 -- fetch 
 SELECT * FROM HoaDon;
 GO
+
+Drop table DanhSachPhong;
+Create table DanhSachPhong
+(
+MaPhong varchar(8),
+LoaiPhong varchar(50),
+DonGiaPhong varchar(15),
+TinhTrangTrong varchar(50),
+TinhTrangVeSinh varchar(50),
+TinhTrangHuHong varchar(50),
+MoTa varchar(80),
+MaPhieuThuePhong varchar(8),
+PRIMARY KEY (MaPhong)
+);
+insert into DanhSachPhong(MaPhong,LoaiPhong,DonGiaPhong,TinhTrangTrong,TinhTrangVeSinh,TinhTrangHuHong,MoTa,MaPhieuThuePhong)
+values
+('PHG001','PHONG DON',500000,'Con Trong ','Sach se ','Khong', 'Phong thoang mat sach se','NULL'),
+('PHG002','PHONG DOI',1000000,'Da Duoc Thue ','Sach se ','Khong', 'Phong thoang mat sach se','P001'),
+('PHG003','PHONG DON',1000000,'Con Trong ','Sach se ','Khong', 'Phong thoang mat sach se','NULL'),
+('PHG004','PHONG DON',500000,'Da Duoc Thue ','Sach se ','Khong', 'Phong thoang mat sach se','P003'),
+('PHG005','PHONG BON',2000000,'Da Duoc Thue ','Sach se ','Khong', 'Phong thoang mat sach se','P004');
+Drop table QuyDinhKhachSan;
+Create table QuyDinhKhachSan
+(
+STT int,
+TenQuyDinh varchar(20),
+NoiDungQuyDinh varchar(80),
+PRIMARY KEY (STT)
+);
+insert into QuyDinhKhachSan(STT,TenQuyDinh,NoiDungQuyDinh)
+values
+(1,'Do dung va Vat tu','Tu Bao quan do dac cua minh '),
+(2,'Thu cung ','Khong duoc tha rong '),
+(3,'Hang Cam ','Khong duoc mang hang cam trong khach san '),
+(4,'Thu tuc tra phong ','Phai kem CMND '),
+(5,'Anh va video ','Nghiem cam viec chup anh trong khach san ');
+Drop table DanhSachKhuyenMai;
+Create table DanhSachKhuyenMai
+(
+MaKhuyenMai varchar(8),
+TenKhuyenMai varchar(80),
+ThongTinKhuyenMai varchar(80),
+ThoiGianBatDau date,
+ThoiGianKetThuc date,
+PRIMARY KEY (MaKhuyenMai)
+);
+insert into DanhSachKhuyenMai(MaKhuyenMai,TenKhuyenMai,ThongTinKhuyenMai,ThoiGianBatDau,ThoiGianKetThuc)
+values
+('KM001','Cafe mien phi','Quy khach se duoc mot ly cafe mien phi vao moi buoi sang ','2022-08-04', '2022-08-04'),
+('KM002','Tra mien phi','Quy khach se duoc mot ly tra mien phi vao moi buoi sang ','2022-08-04', '2022-08-04'),
+('KM003','View an sang dep','Quy khach se duoc lua chon cho ngoi mien phi vao moi buoi sang ','2022-08-04', '2022-08-04'),
+('KM004','Banh my Phap mien phi','Quy khach se duoc mot banh my Phap mien phi vao moi buoi sang ','2022-08-04', '2022-08-04'),
+('KM005','Ve vao be boi mien phi ','Quy khach se duoc mot ve vao ho boi mien phi vao moi buoi chieu ','2022-08-04', '2022-08-04');

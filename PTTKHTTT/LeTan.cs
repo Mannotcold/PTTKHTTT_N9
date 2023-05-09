@@ -30,5 +30,19 @@ namespace PTTKHTTT
             formDatPhong.ShowDialog();
             this.Close();
         }
+
+        private void BanSPDVgui_Click(object sender, EventArgs e)
+        {
+            Form BanSanPhamDichVu = new BanSanPhamDichVu();
+            this.Hide();
+            BanSanPhamDichVu.ShowDialog();
+            this.Close();
+            
+        }
+
+        private void LeTan_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

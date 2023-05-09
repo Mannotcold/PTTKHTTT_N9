@@ -72,9 +72,37 @@ namespace PTTKHTTT
 
         private void TK_PDP_Click(object sender, EventArgs e)
         {
-            
             TK_PhieuDatPhong();
+            if(MaPhieu.Text=="")
+            {
+               // MessageBox.Show("Mã phiếu không hợp lệ hoặc không tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                XemDS_PHIEUDATPHONG();
+            }
+
+
+            // Lấy chuỗi text nhập vào từ TextBox
+            // string searchText = MaPhieu.Text;
+
+            //// Duyệt qua từng dòng của DataGridView
+            //for (int i = 0; i < TK_PhieuDB.Rows.Count; i++)
+            //{
+            //    // Lấy giá trị của cột "Tên sản phẩm" tại dòng đang xử lý
+            //    string maphieu = TK_PhieuDB.Rows[i].Cells["MaPhieuDP"].ToString().ToUpper();
+
+            //    // So sánh chuỗi text nhập vào với giá trị của cột "Tên sản phẩm"
+            //    if (MaPhieu.Text.ToUpper() == maphieu)
+            //    {
+            //        TK_PhieuDatPhong();
+            //        return;
+            //    }
+            //}
+
+            //// Hiển thị thông báo nếu không tìm thấy dữ liệu trùng khớp
+            //MessageBox.Show("Mã phiếu không hợp lệ hoặc không tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //XemDS_PHIEUDATPHONG();
         }
+
+
 
         private void SPDV_Click(object sender, EventArgs e)
         {

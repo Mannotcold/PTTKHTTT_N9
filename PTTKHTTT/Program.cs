@@ -16,16 +16,16 @@ namespace PTTKHTTT
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
+//<<<<<<< HEAD
             Application.Run(new DangNhap());
             //Application.Run(new BanSanPhamDichVu());
             //Application.Run(new BanSPDVtaicho());
-=======
+//=======
             //Application.Run(new DangNhap());
             Application.Run(new BanSanPhamDichVu());
             //Application.Run(new BanSPDVtaicho());
             //Application.Run(new LeTan());
->>>>>>> refs/remotes/origin/master
+//>>>>>>> refs/remotes/origin/master
         }
         //trach vua sua
     }

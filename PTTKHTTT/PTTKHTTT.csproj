@@ -64,6 +64,12 @@
     <Compile Include="DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="DanhSachPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DanhSachPhong.Designer.cs">
+      <DependentUpon>DanhSachPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="LeTan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DanhSachPhong.resx">
+      <DependentUpon>DanhSachPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LeTan.resx">
       <DependentUpon>LeTan.cs</DependentUpon>

@@ -22,6 +22,12 @@ namespace PTTKHTTT
 
             //Application.Run(new DangNhap());
             //Application.Run(new BanSanPhamDichVu());
+<<<<<<< HEAD
+            //Application.Run(new BanSPDVtaicho());
+            //Application.Run(new LeTan());
+            Application.Run(new DanhSachPhong());
+            //Application.Run(new PhieuDatPhong());
+=======
             //Application.Run(new BanSPDVtaicho());
 
             //Application.Run(new DangNhap());
@@ -38,6 +44,7 @@ namespace PTTKHTTT
 
 
 
+>>>>>>> 532ee273b723d8193ab1aba93faaba646ad75231
         }
         //trach vua sua
     }

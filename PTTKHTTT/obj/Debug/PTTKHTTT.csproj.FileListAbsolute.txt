@@ -27,3 +27,15 @@ C:\Users\boost\OneDrive\Máy tính\DA_PTTK\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHT
 D:\Năm3\K2-N3\PTTKHTTT\DAPTTKHT\PTTKHTTT\obj\Debug\PTTKHTTT.BanSanPhamDichVu.resources
 D:\Năm3\K2-N3\PTTKHTTT\DAPTTKHT\PTTKHTTT\obj\Debug\PTTKHTTT.BanSPDVtaicho.resources
 D:\Năm3\K2-N3\PTTKHTTT\DAPTTKHT\PTTKHTTT\obj\Debug\PTTKHTTT.DangNhap.resources
+D:\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.csprojAssemblyReference.cache
+D:\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.BanSanPhamDichVu.resources
+D:\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.BanSPDVtaicho.resources
+D:\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.DangNhap.resources
+D:\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.LeTan.resources
+D:\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.PhieuDatPhong.resources
+D:\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.PhieuVanChuyenHanhLy.resources
+D:\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.Properties.Resources.resources
+D:\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.csproj.GenerateResource.cache
+D:\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.csproj.CoreCompileInputs.cache
+D:\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.exe
+D:\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.pdb

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace PTTKHTTT
 {
@@ -38,6 +39,7 @@ namespace PTTKHTTT
         }
         void TK_PhieuDatPhong()
         {
+
             connection = new SqlConnection(str);
             connection.Open();
             command = connection.CreateCommand();
@@ -120,6 +122,11 @@ namespace PTTKHTTT
         private void BanSanPhamDichVu_Load(object sender, EventArgs e)
         {
             XemDS_PHIEUDATPHONG();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
 
         // this.Hide();

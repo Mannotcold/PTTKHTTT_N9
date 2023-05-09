@@ -79,20 +79,48 @@ values
 ('PH005', 'DA DUYET','2023-05-07','2023-05-07','2023-05-07',2,'KHONG CO','KH001','KHANH','12345','56565656565', 'LE');
 CREATE TABLE TAIKHOAN
 (
-   TEN_TK char(10) NOT NULL,
+   TEN_TK varchar(5) NOT NULL,
    MATKHAU char(30),
 );
 
+--drop TABLE NHANVIEN
 CREATE TABLE NHANVIEN
 (
-   MANV char(10) NOT NULL,
+   MANV varchar(5) NOT NULL,
    TENNV nvarchar(50) NOT NULL,
-   ViTri varchar(13) ,
+   SDT VARCHAR(10),
    CMND varchar(50),
+   VAITRO varchar(13),
    PRIMARY KEY (MANV)
 );
 
-insert into NHANVIEN (MANV, TENNV, ViTri,CMND) values ('NV001', 'Le Van Duan', 'Le Tan', '7684346018');
+
+CREATE TABLE NVBELLMAN(
+	MANV VARCHAR(5),
+	CATRUC VARCHAR(5), --NGAY, DEM
+	FOREIGN KEY (MANV) REFERENCES NHANVIEN(MANV)
+);
+
+CREATE TABLE NVBUONGPHONG(
+	MANV VARCHAR(5),
+	KHUVUCQL VARCHAR(5), --TANG1, TANG2
+	FOREIGN KEY (MANV) REFERENCES NHANVIEN(MANV)
+);
+
+CREATE TABLE NVKETOAN(
+	MANV VARCHAR(5),
+	SLHOSOTHANHTOAN INT,
+	FOREIGN KEY (MANV) REFERENCES NHANVIEN(MANV)
+);
+
+CREATE TABLE NVLETAN(
+	MANV VARCHAR(5),
+	VITRI VARCHAR(5), --BAN1, BAN2
+	FOREIGN KEY (MANV) REFERENCES NHANVIEN(MANV)
+);
+
+
+insert into NHANVIEN (MANV, TENNV, SDT, CMND, VAITRO) values ('NV001', 'Le Van Duan', '0123456789', '7684346018', 'Le Tan');
 insert into TAIKHOAN (TEN_TK, MATKHAU) values ('NV001', 'NV001');
 
 select * from NHANVIEN JOIN TAIKHOAN on MANV = Ten_TK Where MANV = '" + username + "' AND MATKHAU = '" + password + "'
@@ -120,3 +148,63 @@ CREATE TABLE PHANHOI
    PhanHoi nvarchar(50),
    TrangThai nvarchar(50)
 );
+
+-- create----------------------------------------------------
+
+CREATE TABLE HoaDon (
+  MaHoaDon char(10) PRIMARY KEY,
+  NgayLap DATE,
+  TongTien DECIMAL(18,2),
+  TrangThaiThanhToan INT,
+  MaPhieuDP char(10) NOT NULL,
+  FOREIGN KEY (MaPhieuDP) REFERENCES PhieuDatPhong(MaPhieuDP)
+);
+
+CREATE TABLE LienPhieuDichVu (
+  MaLienPhieuDV char(10) PRIMARY KEY,
+  TenDV VARCHAR(50),
+  LoaiDV VARCHAR(50),
+  GiaTien DECIMAL(18,2),
+  SoLuong INT,
+  MaDV CHAR(10),
+  MaPhieuDangKiDichVu INT,
+  FOREIGN KEY (MaDV) REFERENCES DanhSachSanPhamVaDichVu(MaDV),
+  FOREIGN KEY (MaPhieuDangKiDichVu) REFERENCES PhieuDangKiDichVu(MaPhieuDangKiDichVu)
+);
+
+CREATE TABLE CheckoutCard (
+  MaCheckoutCard char(10) PRIMARY KEY,
+  ThoiGianCheckOut DATETIME 
+  -- ThoiGianCheckOut TIMESTAMP
+);
+
+CREATE TABLE HoSoThanhToan (
+  MaHSThanhToan char(10) PRIMARY KEY,
+  MaLienPhieuDV char(10),
+  FOREIGN KEY (MaLienPhieuDV) REFERENCES LienPhieuDichVu(MaLienPhieuDV)
+);
+
+-- insert
+INSERT INTO HoaDon(MaHoaDon, NgayLap, TongTien, TrangThaiThanhToan, MaPhieuDP)
+VALUES ('HD001', '2023-09-23', 1225000,'Chua thanh toan', 'PH001');
+INSERT INTO HoaDon(MaHoaDon, NgayLap, TongTien, TrangThaiThanhToan, MaPhieuDP)
+VALUES ('HD002', '2023-05-05', 850000,'Da thanh toan', 'PH002');
+
+INSERT INTO LienPhieuDichVu(MaLienPhieuDV, TenDV, LoaiDV, GiaTien, SoLuong, MaDV, MaPhieuDangKiDichVu)
+VALUES ('LP001', 'Do an uong', 'An uong', 25000, 5, 'DV001', 'PDV013');
+INSERT INTO LienPhieuDichVu(MaLienPhieuDV, TenDV, LoaiDV, GiaTien, SoLuong, MaDV, MaPhieuDangKiDichVu)
+VALUES ('LP002', 'Xong hoi', 'Spa', 100000, 1, 'DV002', 'PDV011');
+
+INSERT INTO CheckoutCard(MaCheckoutCard, ThoiGianCheckOut)
+VALUES ('CK001', '2023-09-25 09:10:00');
+INSERT INTO CheckoutCard(MaCheckoutCard, ThoiGianCheckOut)
+VALUES ('CK002', '2023-09-26 12:10:00');
+
+INSERT INTO HoSoThanhToan( MaHSThanhToan, MaLienPhieuDV)
+VALUES ('HS001', 'LP001');
+INSERT INTO HoSoThanhToan( MaHSThanhToan, MaLienPhieuDV)
+VALUES ('HS002', 'LP002');
+
+-- fetch 
+SELECT * FROM HoaDon;
+GO

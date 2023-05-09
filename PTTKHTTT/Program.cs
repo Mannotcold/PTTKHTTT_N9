@@ -21,6 +21,6 @@ namespace PTTKHTTT
             //Application.Run(new BanSPDVtaicho());
             //Application.Run(new LeTan());
         }
-        //push len demo
+        //trach vua sua
     }
 }

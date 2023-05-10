@@ -120,6 +120,7 @@ CREATE TABLE KHACHHANG
    TENTK char(40) NOT NULL,
    SDT varchar(13) ,
    CMND nvarchar(50),
+   MAPHIEUDP CHAR(10),
    PRIMARY KEY (MAKH)
 );
 
@@ -264,15 +265,15 @@ VALUES ('HS002', 'LP002');
 
 Create table DanhSachPhong
 (
-MaPhong varchar(8),
-LoaiPhong varchar(50),
-DonGiaPhong varchar(15),
-TinhTrangTrong varchar(50),
-TinhTrangVeSinh varchar(50),
-TinhTrangHuHong varchar(50),
-MoTa varchar(80),
-MaPhieuThuePhong varchar(8),
-PRIMARY KEY (MaPhong)
+	MaPhong varchar(8),
+	LoaiPhong varchar(50),
+	DonGiaPhong varchar(15),
+	TinhTrangTrong varchar(50),
+	TinhTrangVeSinh varchar(50),
+	TinhTrangHuHong varchar(50),
+	MoTa varchar(80),
+	MaPhieuThuePhong varchar(8),
+	PRIMARY KEY (MaPhong)
 );
 insert into DanhSachPhong(MaPhong,LoaiPhong,DonGiaPhong,TinhTrangTrong,TinhTrangVeSinh,TinhTrangHuHong,MoTa,MaPhieuThuePhong)
 values
@@ -314,3 +315,14 @@ values
 ('KM003','View an sang dep','Quy khach se duoc lua chon cho ngoi mien phi vao moi buoi sang ','2022-08-04', '2022-08-04', 'PHG003'),
 ('KM004','Banh my Phap mien phi','Quy khach se duoc mot banh my Phap mien phi vao moi buoi sang ','2022-08-04', '2022-08-04', 'PHG004'),
 ('KM005','Ve vao be boi mien phi ','Quy khach se duoc mot ve vao ho boi mien phi vao moi buoi chieu ','2022-08-04', '2022-08-04', 'PHG005');
+
+CREATE TABLE PHIEUVANCHUYENHANHLY(
+	MAPHIEUVANCHUYENHANHLY VARCHAR(10) PRIMARY KEY,
+	MAPHONG	VARCHAR(10),
+	SLHANHLY INT
+);
+
+INSERT INTO PHIEUVANCHUYENHANHLY(MAPHIEUVANCHUYENHANHLY, MAPHONG, SLHANHLY)
+VALUES
+('PVC001', 'PHG002', 5),
+('PVC002', 'PHG004', 2);

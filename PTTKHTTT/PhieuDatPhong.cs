@@ -39,6 +39,47 @@ namespace PTTKHTTT
             connection.Close();
         }
 
+        private void LaySLPhong()
+        {
+            connection = new SqlConnection(str);
+            connection.Open();
+
+            //Tạo ma phieu dat phong
+            string sql = "select count(*)  from PHIEUDATPHONG PDP join DanhSachPhong DSP on PDP.MaPhieuDP = DSP.MaPhieuThuePhong WHERE PDP.MaPhieuDP = '" + text1.Text + "'";
+
+            SqlCommand com = new SqlCommand(sql, connection);
+            //Lấy dữ liệu về từ kết quả câu lệnh trên
+            //ExecuteReader() dùng với select
+            //ExecuteNonquery(); với inserrt update delete
+            SqlDataReader dta = com.ExecuteReader();
+            while (dta.Read())
+            {
+                int SL = dta.GetInt32(0) ;
+                text7.Text = SL.ToString(); ;
+
+            }
+        }
+
+        private void LaySLKH()
+        {
+            connection = new SqlConnection(str);
+            connection.Open();
+
+            //Tạo ma phieu dat phong
+            string sql = "select count(*)  from PHIEUDATPHONG PDP join KHACHHANG KH on PDP.MaPhieuDP = KH.MAPHIEUDP WHERE PDP.MaPhieuDP = '" + text1.Text + "'";
+
+            SqlCommand com = new SqlCommand(sql, connection);
+            //Lấy dữ liệu về từ kết quả câu lệnh trên
+            //ExecuteReader() dùng với select
+            //ExecuteNonquery(); với inserrt update delete
+            SqlDataReader dta = com.ExecuteReader();
+            while (dta.Read())
+            {
+                int SL = dta.GetInt32(0);
+                text6.Text = SL.ToString(); ;
+
+            }
+        }
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
@@ -147,6 +188,8 @@ namespace PTTKHTTT
             comboBox1.Text = dataGridView1.Rows[i].Cells[11].Value.ToString();
             comboBox2.Text = dataGridView1.Rows[i].Cells[1].Value.ToString();
             richTextBox1.Text = dataGridView1.Rows[i].Cells[6].Value.ToString();
+            LaySLPhong();
+            LaySLKH();
 
         }
 

@@ -97,12 +97,6 @@ CREATE TABLE DOAN
    SoLuongNguoiDangKy int,
 );
 
-CREATE TABLE PHANHOI
-(
-   PhanHoi nvarchar(50),
-   TrangThai nvarchar(50)
-);
-
 create table PhieuDangKiDatTour (
 	MaPhieuDangKiDatTour CHAR(10) PRIMARY KEY,
 	MaTour CHAR(10),
@@ -186,7 +180,25 @@ CREATE TABLE HoSoThanhToan (
   FOREIGN KEY (MaLienPhieuDV) REFERENCES LienPhieuDichVu(MaLienPhieuDV)
 );
 
+CREATE TABLE PHANHOIDICHVU
+(
+	PH_NhanVien char(15),
+	PH_Phong char(15),
+	PH_DoAnNuocUong char(15),
+	PH_DichVuKhac char(15),
+    PhanHoiKhac varchar(50),
+	MaKHDaiDien  char(10),
+	SĐTKHDaiDien nvarchar(50),
+	TrangThai nvarchar(50),
+	FOREIGN KEY (MaKHDaiDien) REFERENCES PHIEUDATPHONG(MaKHDaiDien)
+);
+
 -- insert
+INSERT INTO PHANHOIDICHVU(PH_NhanVien, PH_Phong, PH_DoAnNuocUong, PH_DichVuKhac, PhanHoiKhac, MaKHDaiDien, SĐTKHDaiDien, TrangThai)
+VALUES ('Tot', 'Trung binh', 'Tot','Tot', 'Khong co', 'KH001', '4114478448', 'Da duyet');
+INSERT INTO PHANHOIDICHVU(PH_NhanVien, PH_Phong, PH_DoAnNuocUong, PH_DichVuKhac, PhanHoiKhac, MaKHDaiDien, SĐTKHDaiDien, TrangThai)
+VALUES ('Tot', 'Tot', 'Khong tot','Tot', 'Khong co', 'KH001', '4114478448', 'Da duyet');
+
 INSERT INTO HoaDon(MaHoaDon, NgayLap, TongTien, TrangThaiThanhToan, MaPhieuDP)
 VALUES ('HD001', '2023-09-23', 1225000,'Chua thanh toan', 'PH001');
 INSERT INTO HoaDon(MaHoaDon, NgayLap, TongTien, TrangThaiThanhToan, MaPhieuDP)

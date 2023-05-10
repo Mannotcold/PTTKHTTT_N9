@@ -86,12 +86,6 @@ CREATE TABLE DOAN
    SoLuongNguoiDangKy int,
 );
 
-CREATE TABLE PHANHOI
-(
-   PhanHoi nvarchar(50),
-   TrangThai nvarchar(50)
-);
-
 create table PhieuDangKiDatTour (
 	MaPhieuDangKiDatTour CHAR(10) PRIMARY KEY,
 	MaTour CHAR(10),
@@ -166,6 +160,18 @@ CREATE TABLE HoSoThanhToan (
   FOREIGN KEY (MaLienPhieuDV) REFERENCES LienPhieuDichVu(MaLienPhieuDV)
 );
 
+CREATE TABLE PHANHOIDICHVU
+(
+	PH_NhanVien char(15),
+	PH_Phong char(15),
+	PH_DoAnNuocUong char(15),
+	PH_DichVuKhac char(15),
+    PhanHoiKhac varchar(50),
+	MaKHDaiDien  char(10),
+	SĐTKHDaiDien nvarchar(50),
+	TrangThai nvarchar(50),
+	FOREIGN KEY (MaKHDaiDien) REFERENCES PHIEUDATPHONG(MaKHDaiDien)
+);
 -- fetch 
 SELECT * FROM HoaDon;
 GO

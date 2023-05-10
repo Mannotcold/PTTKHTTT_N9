@@ -25,11 +25,11 @@ namespace PTTKHTTT
             //Application.Run(new BanSPDVtaicho());
 
             //Application.Run(new DangNhap());
-
+           Application.Run(new DanhSachPhong());
             //Application.Run(new BanSanPhamDichVu());
             //Application.Run(new BanSPDVtaicho());
 
-            Application.Run(new DangNhap());
+            //Application.Run(new DangNhap());
             //Application.Run(new BanSanPhamDichVu());
             //Application.Run(new BanSPDVtaicho());
             //Application.Run(new LeTan());

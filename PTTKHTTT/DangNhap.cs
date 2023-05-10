@@ -79,5 +79,20 @@ namespace PTTKHTTT
 
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult rs = MessageBox.Show("Bạn có muốn thoát không", "Thoát", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            if (rs == DialogResult.Yes)
+            {
+
+                this.Close();
+
+            }
+            else
+            {
+
+            }
+        }
     }
 }

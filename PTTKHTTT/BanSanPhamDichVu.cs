@@ -20,7 +20,7 @@ namespace PTTKHTTT
         }
         SqlConnection connection;
         SqlCommand command;
-        string str = "Data Source=.;Initial Catalog=PTTKHTTT;Integrated Security=True";
+        string str = "Data Source=LAPTOP-O8J01RU8;Initial Catalog=PTTKHTTT;Integrated Security=True";
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
 
@@ -108,10 +108,7 @@ namespace PTTKHTTT
 
         private void SPDV_Click(object sender, EventArgs e)
         {
-            Form BanSPDVtaicho = new BanSPDVtaicho();
-            //this.Hide();
-            BanSPDVtaicho.ShowDialog();
-            this.Close();
+            MessageBox.Show("Tính năng chưa được phát triển ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void Tour_Click(object sender, EventArgs e)

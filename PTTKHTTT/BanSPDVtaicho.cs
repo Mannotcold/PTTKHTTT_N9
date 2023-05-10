@@ -20,7 +20,7 @@ namespace PTTKHTTT
         }
         SqlConnection connection;
         SqlCommand command;
-        string str = "Data Source=.;Initial Catalog=PTTKHTTT;Integrated Security=True";
+        string str = "Data Source=LAPTOP-O8J01RU8;Initial Catalog=PTTKHTTT;Integrated Security=True";
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
 
@@ -39,7 +39,7 @@ namespace PTTKHTTT
 
         SqlConnection connection2;
         SqlCommand command2;
-        string str2 = "Data Source=.;Initial Catalog=PTTKHTTT;Integrated Security=True";
+        string str2 = "Data Source=LAPTOP-O8J01RU8;Initial Catalog=PTTKHTTT;Integrated Security=True";
         SqlDataAdapter adapter2 = new SqlDataAdapter();
         DataTable table2 = new DataTable();
         void XemDS_SPDVduocchon()

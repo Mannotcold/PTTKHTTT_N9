@@ -36,6 +36,7 @@ namespace PTTKHTTT
             adapter.Fill(table);
             dataGridView1.DataSource = table;
             //hhhh
+            connection.Close();
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -62,13 +63,36 @@ namespace PTTKHTTT
             richTextBox1.Text = null;
         }
         string MaPhieuDP;
+
+
+        private void MAPHIEUDP()
+        {
+            connection = new SqlConnection(str);
+            connection.Open();
+
+            //Tạo ma phieu dat phong
+            string sql = "select COUNT(*) from PHIEUDATPHONG";
+
+            SqlCommand com = new SqlCommand(sql, connection);
+            //Lấy dữ liệu về từ kết quả câu lệnh trên
+            //ExecuteReader() dùng với select
+            //ExecuteNonquery(); với inserrt update delete
+            SqlDataReader dta = com.ExecuteReader();
+            while (dta.Read())
+            {
+                int madp = dta.GetInt32(0) + 2;
+                MaPhieuDP = "PH00" + madp.ToString();
+                
+            }
+        }
+
+
         private void Them_Click(object sender, EventArgs e)
         {
+            MAPHIEUDP();
             DialogResult rs = MessageBox.Show("Bạn có muốn thêm hay không", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             if (rs == DialogResult.Yes)
             {
-                MessageBox.Show(comboBox2.Text.ToString());
-                string TinhTrang = comboBox2.Text.ToString();
                 connection = new SqlConnection(str);
                 connection.Open();
                 SqlCommand com = new SqlCommand();
@@ -76,7 +100,7 @@ namespace PTTKHTTT
                 //ExecuteReader() dùng với select
                 //ExecuteNonquery(); với inserrt update delete
                 //com.ExecuteNonQuery();
-                MAPHIEUDP();
+                //MAPHIEUDP();
                 com.CommandType = CommandType.Text;
                 com.CommandText = "insert into  PHIEUDATPHONG (MaPhieuDP, TinhTrangDuyet,NgayLap,NgayDen,NgayDi,SoDemLuuTru, CacYeuCauDacBiet, LoaiKH) VALUES ('" + MaPhieuDP + "','" + comboBox2.Text.ToString() + "','" + dateTimePicker3.Text + "','" + dateTimePicker1.Text + "','" + dateTimePicker2.Text + "','" + text8.Text + "','" + richTextBox1.Text + "','" + comboBox2.Text + "')";
                 com.Connection = connection;
@@ -100,27 +124,6 @@ namespace PTTKHTTT
 
         }
 
-
-        private void MAPHIEUDP()
-        {
-            connection = new SqlConnection(str);
-            connection.Open();
-            loaddata();
-
-            //Tạo mã đơn hàng mới
-            string sql = "select COUNT(*) from PHIEUDATPHONG";
-
-            SqlCommand com = new SqlCommand(sql, connection);
-            //Lấy dữ liệu về từ kết quả câu lệnh trên
-            //ExecuteReader() dùng với select
-            //ExecuteNonquery(); với inserrt update delete
-            SqlDataReader dta = com.ExecuteReader();
-            while (dta.Read())
-            {
-                int madh = dta.GetInt32(0) + 1;
-                MaPhieuDP = "PH00" + madh.ToString();
-            }
-        }
 
         private void PhieuDatPhong_Load(object sender, EventArgs e)
         {
@@ -173,8 +176,6 @@ namespace PTTKHTTT
             DialogResult rs = MessageBox.Show("Bạn có muốn cập nhật hay không", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             if (rs == DialogResult.Yes)
             {
-                MessageBox.Show(comboBox2.Text.ToString());
-                string TinhTrang = comboBox2.Text.ToString();
                 connection = new SqlConnection(str);
                 connection.Open();
                 SqlCommand com = new SqlCommand();
@@ -182,10 +183,9 @@ namespace PTTKHTTT
                 //ExecuteReader() dùng với select
                 //ExecuteNonquery(); với inserrt update delete
                 //com.ExecuteNonQuery();
-                MaPhieuDP = "30";
                 com.CommandType = CommandType.Text;
 
-                com.CommandText = "Update PHIEUDATPHONG set TinhTrangDuyet = '" + comboBox2.Text.ToString() + "',NgayLap = '" + dateTimePicker3.Text + "',NgayDen = '" + dateTimePicker1.Text + "', NgayDi = '" + dateTimePicker2.Text + "' ,SoDemLuuTru = '" + text8.Text + "', CacYeuCauDacBiet = '" + richTextBox1.Text + "', LoaiKH = '" + comboBox2.Text + "' where MAPHIEUDP = '" + text1.Text + "'";
+                com.CommandText = "Update PHIEUDATPHONG set TinhTrangDuyet = '" + comboBox2.Text.ToString() + "',NgayLap = '" + dateTimePicker3.Text + "',NgayDen = '" + dateTimePicker1.Text + "', NgayDi = '" + dateTimePicker2.Text + "' ,SoDemLuuTru = '" + text8.Text + "', CacYeuCauDacBiet = '" + richTextBox1.Text + "', LoaiKH = '" + comboBox1.Text + "' where MAPHIEUDP = '" + text1.Text + "'";
                 com.Connection = connection;
                 //loaddata();
                 int kq = com.ExecuteNonQuery();
@@ -234,13 +234,21 @@ namespace PTTKHTTT
                 {
                     MessageBox.Show("Xóa thất bại! .");
                 }
-
+                loaddata();
             }
             else
             {
 
             }
 
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Form formLeTan = new LeTan();
+            this.Hide();
+            formLeTan.ShowDialog();
+            this.Close();
         }
     }
 }

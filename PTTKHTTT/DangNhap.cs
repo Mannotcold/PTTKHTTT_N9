@@ -57,13 +57,13 @@ namespace PTTKHTTT
                         formbellman.ShowDialog();
                         this.Close();
                     }
-                    else if (account_type == "NVBELLMAN")
+                    else if (account_type == "NVBUONGPHONG")
                     {
-                        this.Close();
+                        MessageBox.Show("Tính năng chưa được phát triển ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    else if (account_type == "NVBELLMAN")
+                    else if (account_type == "NVKETOAN")
                     {
-                        this.Close();
+                        MessageBox.Show("Tính năng chưa được phát triển ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                 }
@@ -78,6 +78,21 @@ namespace PTTKHTTT
             }
 
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult rs = MessageBox.Show("Bạn có muốn thoát không", "Thoát", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            if (rs == DialogResult.Yes)
+            {
+
+                this.Close();
+
+            }
+            else
+            {
+
+            }
         }
     }
 }

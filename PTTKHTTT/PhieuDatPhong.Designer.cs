@@ -356,8 +356,8 @@ namespace PTTKHTTT
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            "Đã duyệt",
-            "Chưa duyệt"});
+            "CHUA DUYET",
+            "DA DUYET"});
             this.comboBox2.Location = new System.Drawing.Point(192, 259);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(96, 21);
@@ -379,8 +379,8 @@ namespace PTTKHTTT
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Lẻ",
-            "Đoàn"});
+            "LE",
+            "DOAN"});
             this.comboBox1.Location = new System.Drawing.Point(590, 259);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(96, 21);
@@ -514,6 +514,7 @@ namespace PTTKHTTT
             this.button9.TabIndex = 105;
             this.button9.Text = "Quay lại";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // PhieuDatPhong
             // 

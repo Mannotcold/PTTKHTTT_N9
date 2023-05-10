@@ -47,7 +47,10 @@ namespace PTTKHTTT
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            int i;
+            i = dataGridView1.CurrentRow.Index;
+            textBox2.Text = dataGridView1.Rows[i].Cells[0].Value.ToString();
+            comboBox1.Text = dataGridView1.Rows[i].Cells[1].Value.ToString();
         }
 
         private void PhieuVanChuyenHanhLy_Load(object sender, EventArgs e)

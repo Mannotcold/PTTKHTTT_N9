@@ -93,7 +93,6 @@ namespace PTTKHTTT
             DialogResult rs = MessageBox.Show("Bạn có muốn thêm hay không", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             if (rs == DialogResult.Yes)
             {
-                MaPhieuDP = "PH006";
                 connection = new SqlConnection(str);
                 connection.Open();
                 SqlCommand com = new SqlCommand();

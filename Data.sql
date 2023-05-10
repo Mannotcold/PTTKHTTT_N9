@@ -1,8 +1,7 @@
-﻿create database PTTKHTTT;
-use PTTKHTTT;
-go
+﻿--create database PTTKHTTT;
+--use PTTKHTTT;
+--go
 
-drop table PHIEUDATPHONG
 CREATE TABLE PHIEUDATPHONG
 (
    MaPhieuDP char(10) NOT NULL,
@@ -20,11 +19,8 @@ CREATE TABLE PHIEUDATPHONG
    PRIMARY KEY (MaPhieuDP)
 );
 
-DELETE FROM PHIEUDATPHONG
-WHERE MaPhieuDP = 'PH001';
-DELETE FROM PHIEUDATPHONG
-WHERE MaPhieuDP = 'PH002';
-SELECT * FROM PHIEUDATPHONG;
+
+
 insert into PHIEUDATPHONG (MaPhieuDP, TinhTrangDuyet,NgayLap,NgayDen,NgayDi,SoDemLuuTru, CacYeuCauDacBiet,MaKHDaiDien,TenKHDaiDien,CMNDKHDaiDien, SĐTKHDaiDien, LoaiKH) 
 values 
 ('PH001', 'DA DUYET','2023-05-07','2023-05-07','2023-05-07',2,'KHONG CO','KH001','DANH','12345','4114478448', 'DOAN'),
@@ -33,11 +29,11 @@ values
 ('PH004', 'DA DUYET','2023-05-07','2023-05-07','2023-05-07',2,'KHONG CO','KH004','TRACH','12345','56556565556', 'LE'),
 ('PH005', 'DA DUYET','2023-05-07','2023-05-07','2023-05-07',2,'KHONG CO','KH005','KHANH','12345','56565656565', 'LE');
 ----------------------------
-SELECT PDP.MAPHIEUDP AS MAPHIEU, P.MAPHONG AS MAPHONG
+/*SELECT PDP.MAPHIEUDP AS MAPHIEU, P.MAPHONG AS MAPHONG
 FROM PHIEUDATPHONG PDP JOIN DANHSACHPHONG P ON PDP.MAPHIEUDP = P.MAPHIEUTHUEPHONG
-WHERE PDP.TenKHDaiDien = 'LAM' 
+WHERE PDP.TenKHDaiDien = 'LAM' */
 
-drop table TAIKHOAN
+
 CREATE TABLE TAIKHOAN
 (
    TEN_TK varchar(5) NOT NULL,
@@ -51,7 +47,7 @@ values
 ('NV003', 'NV003'),
 ('NV004', 'NV004');
 
-drop TABLE NHANVIEN
+
 CREATE TABLE NHANVIEN
 (
    MANV varchar(5) NOT NULL,
@@ -111,13 +107,13 @@ insert into NVLETAN (MANV,VITRI)
 values 
 ('NV003', 'BAN1');
 
-insert into NHANVIEN (MANV, TENNV, SDT, CMND, VAITRO) values ('NV001', 'Le Van Duan', '0123456789', '7684346018', 'Le Tan');
+
 insert into TAIKHOAN (TEN_TK, MATKHAU) values ('NV001', 'NV001');
 
 select * from NHANVIEN JOIN TAIKHOAN on MANV = Ten_TK Where MANV = '" + username + "' AND MATKHAU = '" + password + "'
 select * from NHANVIEN JOIN TAIKHOAN on MANV = Ten_TK Where MANV = 'NV001' AND MATKHAU = 'NV001'
 
-drop table KHACHHANG
+
 CREATE TABLE KHACHHANG
 (
    MAKH char(10) NOT NULL,
@@ -162,6 +158,10 @@ create table PhieuDangKiDichVu (
 	ThoiGianSuDung VARCHAR(50),
 	CacYeuCauDacBiet VARCHAR(50)
 );
+insert into PhieuDangKiDichVu(MaPhieuDangKiDichVu,ThoiGianSuDung,CacYeuCauDacBiet)
+values
+('PDV003','12:00','Khong co'),
+('PDV004','14:00','Khong co');
 
 create table DanhSachSanPhamVaDichVu  (
 	MaDV CHAR(10) PRIMARY KEY,
@@ -170,8 +170,7 @@ create table DanhSachSanPhamVaDichVu  (
 	ThoiGianMo INT,
 	ThoiGianDong INT
 );
-DELETE FROM DanhSachSanPhamVaDichVu
-WHERE MaDV = 'DV001';
+
 ---DU LIEU DEMO CUA BANH DANH SACH SAN PHAM VA DI VU
 insert into DanhSachSanPhamVaDichVu(MaDV,TenDV,DonGiaDV,ThoiGianMo,ThoiGianDong)
 values
@@ -183,7 +182,7 @@ values
 
 
 -- create----------------------------------------------------
---DROP TABLE HoaDon
+
 CREATE TABLE HoaDon (
   MaHoaDon char(10) PRIMARY KEY,
   NgayLap DATE,
@@ -208,7 +207,6 @@ CREATE TABLE LienPhieuDichVu (
 CREATE TABLE CheckoutCard (
   MaCheckoutCard char(10) PRIMARY KEY,
   ThoiGianCheckOut DATETIME 
-  -- ThoiGianCheckOut TIMESTAMP
 );
 
 CREATE TABLE HoSoThanhToan (
@@ -231,8 +229,7 @@ CREATE TABLE PHANHOIDICHVU
     PhanHoiKhac varchar(50),
 	MaKHDaiDien  char(10),
 	SĐTKHDaiDien nvarchar(50),
-	TrangThai nvarchar(50),
-	FOREIGN KEY (MaKHDaiDien) REFERENCES PHIEUDATPHONG(MaKHDaiDien)
+	TrangThai nvarchar(50)
 );
 
 -- insert
@@ -247,9 +244,9 @@ INSERT INTO HoaDon(MaHoaDon, NgayLap, TongTien, TrangThaiThanhToan, MaPhieuDP)
 VALUES ('HD002', '2023-05-05', 850000,'Da thanh toan', 'PH002');
 
 INSERT INTO LienPhieuDichVu(MaLienPhieuDV, TenDV, LoaiDV, GiaTien, SoLuong, MaDV, MaPhieuDangKiDichVu)
-VALUES ('LP001', 'Do an uong', 'An uong', 25000, 5, 'DV001', 'PDV013');
+VALUES ('LP001', 'Do an uong', 'An uong', 25000, 5, 'DV001', 'PDV003');
 INSERT INTO LienPhieuDichVu(MaLienPhieuDV, TenDV, LoaiDV, GiaTien, SoLuong, MaDV, MaPhieuDangKiDichVu)
-VALUES ('LP002', 'Xong hoi', 'Spa', 100000, 1, 'DV002', 'PDV011');
+VALUES ('LP002', 'Xong hoi', 'Spa', 100000, 1, 'DV002', 'PDV004');
 
 INSERT INTO CheckoutCard(MaCheckoutCard, ThoiGianCheckOut)
 VALUES ('CK001', '2023-09-25 09:10:00');
@@ -262,10 +259,9 @@ INSERT INTO HoSoThanhToan( MaHSThanhToan, MaLienPhieuDV)
 VALUES ('HS002', 'LP002');
 
 -- fetch 
-SELECT * FROM HoaDon;
-GO
 
-Drop table DanhSachPhong;
+
+
 Create table DanhSachPhong
 (
 MaPhong varchar(8),
@@ -285,13 +281,13 @@ values
 ('PHG003','PHONG DON',1000000,'Con Trong ','Sach se ','Khong', 'Phong thoang mat sach se','NULL'),
 ('PHG004','PHONG DON',500000,'Da Duoc Thue ','Sach se ','Khong', 'Phong thoang mat sach se','PH003'),
 ('PHG005','PHONG BON',2000000,'Da Duoc Thue ','Sach se ','Khong', 'Phong thoang mat sach se','PH004');
-Drop table QuyDinhKhachSan;
+
 Create table QuyDinhKhachSan
 (
-STT int,
-TenQuyDinh varchar(20),
-NoiDungQuyDinh varchar(80),
-PRIMARY KEY (STT)
+	STT int,
+	TenQuyDinh varchar(20),
+	NoiDungQuyDinh varchar(80),
+	PRIMARY KEY (STT)
 );
 insert into QuyDinhKhachSan(STT,TenQuyDinh,NoiDungQuyDinh)
 values
@@ -300,20 +296,21 @@ values
 (3,'Hang Cam ','Khong duoc mang hang cam trong khach san '),
 (4,'Thu tuc tra phong ','Phai kem CMND '),
 (5,'Anh va video ','Nghiem cam viec chup anh trong khach san ');
-Drop table DanhSachKhuyenMai;
+
 Create table DanhSachKhuyenMai
 (
-MaKhuyenMai varchar(8),
-TenKhuyenMai varchar(80),
-ThongTinKhuyenMai varchar(80),
-ThoiGianBatDau date,
-ThoiGianKetThuc date,
-PRIMARY KEY (MaKhuyenMai)
+	MaKhuyenMai varchar(8),
+	TenKhuyenMai varchar(80),
+	ThongTinKhuyenMai varchar(80),
+	ThoiGianBatDau date,
+	ThoiGianKetThuc date,
+	MaPhong varchar(8),
+	PRIMARY KEY (MaKhuyenMai)
 );
-insert into DanhSachKhuyenMai(MaKhuyenMai,TenKhuyenMai,ThongTinKhuyenMai,ThoiGianBatDau,ThoiGianKetThuc)
+insert into DanhSachKhuyenMai(MaKhuyenMai,TenKhuyenMai,ThongTinKhuyenMai,ThoiGianBatDau,ThoiGianKetThuc, MaPhong)
 values
-('KM001','Cafe mien phi','Quy khach se duoc mot ly cafe mien phi vao moi buoi sang ','2022-08-04', '2022-08-04'),
-('KM002','Tra mien phi','Quy khach se duoc mot ly tra mien phi vao moi buoi sang ','2022-08-04', '2022-08-04'),
-('KM003','View an sang dep','Quy khach se duoc lua chon cho ngoi mien phi vao moi buoi sang ','2022-08-04', '2022-08-04'),
-('KM004','Banh my Phap mien phi','Quy khach se duoc mot banh my Phap mien phi vao moi buoi sang ','2022-08-04', '2022-08-04'),
-('KM005','Ve vao be boi mien phi ','Quy khach se duoc mot ve vao ho boi mien phi vao moi buoi chieu ','2022-08-04', '2022-08-04');
+('KM001','Cafe mien phi','Quy khach se duoc mot ly cafe mien phi vao moi buoi sang ','2022-08-04', '2022-08-04', 'PHG001'),
+('KM002','Tra mien phi','Quy khach se duoc mot ly tra mien phi vao moi buoi sang ','2022-08-04', '2022-08-04', 'PHG002'),
+('KM003','View an sang dep','Quy khach se duoc lua chon cho ngoi mien phi vao moi buoi sang ','2022-08-04', '2022-08-04', 'PHG003'),
+('KM004','Banh my Phap mien phi','Quy khach se duoc mot banh my Phap mien phi vao moi buoi sang ','2022-08-04', '2022-08-04', 'PHG004'),
+('KM005','Ve vao be boi mien phi ','Quy khach se duoc mot ve vao ho boi mien phi vao moi buoi chieu ','2022-08-04', '2022-08-04', 'PHG005');

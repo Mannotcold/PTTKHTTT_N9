@@ -19,9 +19,31 @@ namespace PTTKHTTT
         }
         SqlConnection connection;
         SqlCommand command;
-        string str = "Data Source=LAPTOP-GV7LG3M7;Initial Catalog=PTTKHTTT;Integrated Security=True";
+        string str = "Data Source=LAPTOP-O8J01RU8;Initial Catalog=PTTKHTTT;Integrated Security=True";
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
+
+        private void LayKM()
+        {
+            connection = new SqlConnection(str);
+            connection.Open();
+
+            //Tạo ma phieu dat phong
+            string sql = "select TenKhuyenMai  from DanhSachKhuyenMai KM join DanhSachPhong DSP on KM.MAPHONG = DSP.MAPHONG WHERE DSP.MaPhong = '" + text1.Text + "'";
+
+            SqlCommand com = new SqlCommand(sql, connection);
+            //Lấy dữ liệu về từ kết quả câu lệnh trên
+            //ExecuteReader() dùng với select
+            //ExecuteNonquery(); với inserrt update delete
+            SqlDataReader dta = com.ExecuteReader();
+            while (dta.Read())
+            {
+                //MessageBox.Show(dta.GetString(0));
+                text8.Text = dta.GetString(0);
+                //MaPhieuDP = "PH00" + madp.ToString();
+
+            }
+        }
 
         void XemDanhSachPhong()
         {
@@ -52,7 +74,7 @@ namespace PTTKHTTT
             text6.Text = DSP.Rows[i].Cells[5].Value.ToString();
             text7.Text = DSP.Rows[i].Cells[7].Value.ToString();
             text9.Text = DSP.Rows[i].Cells[6].Value.ToString();
-            text8.Text = DSP.Rows[i].Cells[8].Value.ToString();
+            LayKM();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -79,7 +101,7 @@ namespace PTTKHTTT
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form DanhSachPhong = new DanhSachPhong();
+            Form DanhSachPhong = new LeTan();
             this.Hide();
             DanhSachPhong.ShowDialog();
             this.Close();

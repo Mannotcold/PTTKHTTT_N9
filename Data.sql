@@ -277,10 +277,10 @@ PRIMARY KEY (MaPhong)
 insert into DanhSachPhong(MaPhong,LoaiPhong,DonGiaPhong,TinhTrangTrong,TinhTrangVeSinh,TinhTrangHuHong,MoTa,MaPhieuThuePhong)
 values
 ('PHG001','PHONG DON',500000,'Con Trong ','Sach se ','Khong', 'Phong thoang mat sach se','NULL'),
-('PHG002','PHONG DOI',1000000,'Da Duoc Thue ','Sach se ','Khong', 'Phong thoang mat sach se','P001'),
+('PHG002','PHONG DOI',1000000,'Da Duoc Thue ','Sach se ','Khong', 'Phong thoang mat sach se','PH001'),
 ('PHG003','PHONG DON',1000000,'Con Trong ','Sach se ','Khong', 'Phong thoang mat sach se','NULL'),
-('PHG004','PHONG DON',500000,'Da Duoc Thue ','Sach se ','Khong', 'Phong thoang mat sach se','P003'),
-('PHG005','PHONG BON',2000000,'Da Duoc Thue ','Sach se ','Khong', 'Phong thoang mat sach se','P004');
+('PHG004','PHONG DON',500000,'Da Duoc Thue ','Sach se ','Khong', 'Phong thoang mat sach se','PH003'),
+('PHG005','PHONG BON',2000000,'Da Duoc Thue ','Sach se ','Khong', 'Phong thoang mat sach se','PH004');
 Drop table QuyDinhKhachSan;
 Create table QuyDinhKhachSan
 (

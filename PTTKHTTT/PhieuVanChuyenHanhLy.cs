@@ -21,7 +21,7 @@ namespace PTTKHTTT
 
         SqlConnection connection;
         SqlCommand command;
-        string str = "Data Source=DESKTOP-GJA4FCO;Initial Catalog=PTTKHTTT;Integrated Security=True";
+        string str = "Data Source=.;Initial Catalog=PTTKHTTT;Integrated Security=True";
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
 
@@ -32,8 +32,8 @@ namespace PTTKHTTT
             string TenKHDaiDien = textBox1.Text;
             command = connection.CreateCommand();
             command.CommandText = "SELECT PDP.MAPHIEUDP AS MAPHIEU, P.MAPHONG AS MAPHONG" +
-                "                   FROM PHIEUDATPHONG PDP, PHONG P " +
-                "                   WHERE TenKHDaiDien = '" + TenKHDaiDien + "' AND PDP.MAPHIEUDP = P.MAPHONG";
+                "               FROM PHIEUDATPHONG PDP JOIN DANHSACHPHONG P ON PDP.MAPHIEUDP = P.MAPHIEUTHUEPHONG" +
+                "               WHERE PDP.TenKHDaiDien = '" + TenKHDaiDien + "'";
             adapter.SelectCommand = command;
             table.Clear();
             adapter.Fill(table);

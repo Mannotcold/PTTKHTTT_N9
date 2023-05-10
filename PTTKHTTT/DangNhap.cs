@@ -42,19 +42,30 @@ namespace PTTKHTTT
                 if (dta.Read() == true)
                 {
                     MessageBox.Show("Bạn đã đăng nhập thành công");
-                    string account_type = dta.GetString(2);
-                    if (account_type == "Le Tan")
+                    string account_type = dta.GetString(4);
+                    if (account_type == "NVLETAN")
                     {
                         Form formLeTan = new LeTan(username);
                         this.Hide();
                         formLeTan.ShowDialog();
                         this.Close();
                     }
-                    else if (account_type == "Bellman")
+                    else if (account_type == "NVBELLMAN")
+                    {
+                        Form formbellman = new PhieuVanChuyenHanhLy();
+                        this.Hide();
+                        formbellman.ShowDialog();
+                        this.Close();
+                    }
+                    else if (account_type == "NVBELLMAN")
                     {
                         this.Close();
                     }
-                    
+                    else if (account_type == "NVBELLMAN")
+                    {
+                        this.Close();
+                    }
+
                 }
                 else
                 {

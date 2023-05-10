@@ -2,7 +2,6 @@
 use PTTKHTTT;
 go
 
-drop table PHIEUDATPHONG
 CREATE TABLE PHIEUDATPHONG
 (
    MaPhieuDP char(10) NOT NULL,
@@ -20,11 +19,8 @@ CREATE TABLE PHIEUDATPHONG
    PRIMARY KEY (MaPhieuDP)
 );
 
-DELETE FROM PHIEUDATPHONG
-WHERE MaPhieuDP = 'PH001';
-DELETE FROM PHIEUDATPHONG
-WHERE MaPhieuDP = 'PH002';
-SELECT * FROM PHIEUDATPHONG;
+
+
 insert into PHIEUDATPHONG (MaPhieuDP, TinhTrangDuyet,NgayLap,NgayDen,NgayDi,SoDemLuuTru, CacYeuCauDacBiet,MaKHDaiDien,TenKHDaiDien,CMNDKHDaiDien, SĐTKHDaiDien, LoaiKH) 
 values 
 ('PH001', 'DA DUYET','2023-05-07','2023-05-07','2023-05-07',2,'KHONG CO','KH001','DANH','12345','4114478448', 'DOAN'),
@@ -37,7 +33,7 @@ SELECT PDP.MAPHIEUDP AS MAPHIEU, P.MAPHONG AS MAPHONG
 FROM PHIEUDATPHONG PDP JOIN DANHSACHPHONG P ON PDP.MAPHIEUDP = P.MAPHIEUTHUEPHONG
 WHERE PDP.TenKHDaiDien = 'LAM' 
 
-drop table TAIKHOAN
+
 CREATE TABLE TAIKHOAN
 (
    TEN_TK varchar(5) NOT NULL,
@@ -51,7 +47,7 @@ values
 ('NV003', 'NV003'),
 ('NV004', 'NV004');
 
-drop TABLE NHANVIEN
+
 CREATE TABLE NHANVIEN
 (
    MANV varchar(5) NOT NULL,
@@ -111,13 +107,13 @@ insert into NVLETAN (MANV,VITRI)
 values 
 ('NV003', 'BAN1');
 
-insert into NHANVIEN (MANV, TENNV, SDT, CMND, VAITRO) values ('NV001', 'Le Van Duan', '0123456789', '7684346018', 'Le Tan');
+
 insert into TAIKHOAN (TEN_TK, MATKHAU) values ('NV001', 'NV001');
 
 select * from NHANVIEN JOIN TAIKHOAN on MANV = Ten_TK Where MANV = '" + username + "' AND MATKHAU = '" + password + "'
 select * from NHANVIEN JOIN TAIKHOAN on MANV = Ten_TK Where MANV = 'NV001' AND MATKHAU = 'NV001'
 
-drop table KHACHHANG
+
 CREATE TABLE KHACHHANG
 (
    MAKH char(10) NOT NULL,
@@ -170,8 +166,7 @@ create table DanhSachSanPhamVaDichVu  (
 	ThoiGianMo INT,
 	ThoiGianDong INT
 );
-DELETE FROM DanhSachSanPhamVaDichVu
-WHERE MaDV = 'DV001';
+
 ---DU LIEU DEMO CUA BANH DANH SACH SAN PHAM VA DI VU
 insert into DanhSachSanPhamVaDichVu(MaDV,TenDV,DonGiaDV,ThoiGianMo,ThoiGianDong)
 values
@@ -183,7 +178,7 @@ values
 
 
 -- create----------------------------------------------------
---DROP TABLE HoaDon
+
 CREATE TABLE HoaDon (
   MaHoaDon char(10) PRIMARY KEY,
   NgayLap DATE,
@@ -262,10 +257,9 @@ INSERT INTO HoSoThanhToan( MaHSThanhToan, MaLienPhieuDV)
 VALUES ('HS002', 'LP002');
 
 -- fetch 
-SELECT * FROM HoaDon;
-GO
 
-Drop table DanhSachPhong;
+
+
 Create table DanhSachPhong
 (
 MaPhong varchar(8),
@@ -285,7 +279,7 @@ values
 ('PHG003','PHONG DON',1000000,'Con Trong ','Sach se ','Khong', 'Phong thoang mat sach se','NULL'),
 ('PHG004','PHONG DON',500000,'Da Duoc Thue ','Sach se ','Khong', 'Phong thoang mat sach se','PH003'),
 ('PHG005','PHONG BON',2000000,'Da Duoc Thue ','Sach se ','Khong', 'Phong thoang mat sach se','PH004');
-Drop table QuyDinhKhachSan;
+
 Create table QuyDinhKhachSan
 (
 STT int,
@@ -300,7 +294,7 @@ values
 (3,'Hang Cam ','Khong duoc mang hang cam trong khach san '),
 (4,'Thu tuc tra phong ','Phai kem CMND '),
 (5,'Anh va video ','Nghiem cam viec chup anh trong khach san ');
-Drop table DanhSachKhuyenMai;
+
 Create table DanhSachKhuyenMai
 (
 MaKhuyenMai varchar(8),

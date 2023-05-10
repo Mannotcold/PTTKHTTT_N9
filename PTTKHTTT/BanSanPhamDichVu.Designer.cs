@@ -35,6 +35,7 @@
             this.TK_PhieuDB = new System.Windows.Forms.DataGridView();
             this.SPDV = new System.Windows.Forms.Button();
             this.Tour = new System.Windows.Forms.Button();
+            this.TroLai_LeTan = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TK_PhieuDB)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,9 +43,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(160, 92);
+            this.label1.Location = new System.Drawing.Point(142, 74);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(538, 38);
+            this.label1.Size = new System.Drawing.Size(456, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "THÔNG TIN PHIẾU ĐẶT PHÒNG";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -52,10 +53,9 @@
             // TK_PDP
             // 
             this.TK_PDP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TK_PDP.Location = new System.Drawing.Point(543, 188);
-            this.TK_PDP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TK_PDP.Location = new System.Drawing.Point(483, 150);
             this.TK_PDP.Name = "TK_PDP";
-            this.TK_PDP.Size = new System.Drawing.Size(143, 36);
+            this.TK_PDP.Size = new System.Drawing.Size(127, 29);
             this.TK_PDP.TabIndex = 5;
             this.TK_PDP.Text = "Tìm kiếm";
             this.TK_PDP.UseVisualStyleBackColor = true;
@@ -65,39 +65,36 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(143, 188);
+            this.label4.Location = new System.Drawing.Point(127, 150);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(221, 25);
+            this.label4.Size = new System.Drawing.Size(173, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Mã phiếu đặt phòng";
             // 
             // MaPhieu
             // 
-            this.MaPhieu.Location = new System.Drawing.Point(374, 188);
-            this.MaPhieu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaPhieu.Location = new System.Drawing.Point(332, 150);
             this.MaPhieu.Name = "MaPhieu";
-            this.MaPhieu.Size = new System.Drawing.Size(112, 26);
+            this.MaPhieu.Size = new System.Drawing.Size(100, 22);
             this.MaPhieu.TabIndex = 7;
             // 
             // TK_PhieuDB
             // 
             this.TK_PhieuDB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TK_PhieuDB.Location = new System.Drawing.Point(55, 286);
-            this.TK_PhieuDB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TK_PhieuDB.Location = new System.Drawing.Point(49, 229);
             this.TK_PhieuDB.Name = "TK_PhieuDB";
             this.TK_PhieuDB.RowHeadersWidth = 51;
             this.TK_PhieuDB.RowTemplate.Height = 24;
-            this.TK_PhieuDB.Size = new System.Drawing.Size(785, 220);
+            this.TK_PhieuDB.Size = new System.Drawing.Size(698, 176);
             this.TK_PhieuDB.TabIndex = 8;
             this.TK_PhieuDB.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // SPDV
             // 
             this.SPDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SPDV.Location = new System.Drawing.Point(55, 535);
-            this.SPDV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.SPDV.Location = new System.Drawing.Point(49, 428);
             this.SPDV.Name = "SPDV";
-            this.SPDV.Size = new System.Drawing.Size(378, 61);
+            this.SPDV.Size = new System.Drawing.Size(336, 49);
             this.SPDV.TabIndex = 10;
             this.SPDV.Text = "Bán sản phẩm và dịch vụ tại chỗ";
             this.SPDV.UseVisualStyleBackColor = true;
@@ -106,20 +103,30 @@
             // Tour
             // 
             this.Tour.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tour.Location = new System.Drawing.Point(467, 536);
-            this.Tour.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Tour.Location = new System.Drawing.Point(415, 429);
             this.Tour.Name = "Tour";
-            this.Tour.Size = new System.Drawing.Size(374, 58);
+            this.Tour.Size = new System.Drawing.Size(332, 46);
             this.Tour.TabIndex = 11;
             this.Tour.Text = "Bán Tour du lịch tại chỗ";
             this.Tour.UseVisualStyleBackColor = true;
             this.Tour.Click += new System.EventHandler(this.Tour_Click);
             // 
+            // TroLai_LeTan
+            // 
+            this.TroLai_LeTan.Location = new System.Drawing.Point(49, 491);
+            this.TroLai_LeTan.Name = "TroLai_LeTan";
+            this.TroLai_LeTan.Size = new System.Drawing.Size(75, 38);
+            this.TroLai_LeTan.TabIndex = 12;
+            this.TroLai_LeTan.Text = "Trở Lại";
+            this.TroLai_LeTan.UseVisualStyleBackColor = true;
+            this.TroLai_LeTan.Click += new System.EventHandler(this.TroLai_LeTan_Click_1);
+            // 
             // BanSanPhamDichVu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 776);
+            this.ClientSize = new System.Drawing.Size(800, 542);
+            this.Controls.Add(this.TroLai_LeTan);
             this.Controls.Add(this.Tour);
             this.Controls.Add(this.SPDV);
             this.Controls.Add(this.TK_PhieuDB);
@@ -127,7 +134,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.TK_PDP);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "BanSanPhamDichVu";
             this.Text = "BanSanPhamDichVu";
             this.Load += new System.EventHandler(this.BanSanPhamDichVu_Load);
@@ -146,5 +152,6 @@
         private System.Windows.Forms.DataGridView TK_PhieuDB;
         private System.Windows.Forms.Button SPDV;
         private System.Windows.Forms.Button Tour;
+        private System.Windows.Forms.Button TroLai_LeTan;
     }
 }

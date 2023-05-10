@@ -18,13 +18,14 @@ namespace PTTKHTTT
             Application.SetCompatibleTextRenderingDefault(false);
 
 
-            // Application.Run(new DangNhap());
+            Application.Run(new DangNhap());
 
             //Application.Run(new DangNhap());
             //Application.Run(new BanSanPhamDichVu());
             //Application.Run(new BanSPDVtaicho());
 
             //Application.Run(new DangNhap());
+<<<<<<< HEAD
            //Application.Run(new DanhSachPhong());
             //Application.Run(new BanSanPhamDichVu());
             //Application.Run(new BanSPDVtaicho());
@@ -35,10 +36,16 @@ namespace PTTKHTTT
             //Application.Run(new LeTan());
 
             //Application.Run(new PhieuVanChuyenHanhLy());
+=======
+            //Application.Run(new DanhSachPhong());
+            //Application.Run(new BanSanPhamDichVu());
+            //Application.Run(new BanSPDVtaicho());
+
+>>>>>>> 0efcc458b324617dc636306bc799fe5da4979158
 
 
 
         }
-        //trach vua sua
+        
     }
 }

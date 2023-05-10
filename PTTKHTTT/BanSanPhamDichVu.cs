@@ -8,7 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PTTKHTTT
 {
@@ -20,11 +22,11 @@ namespace PTTKHTTT
         }
         SqlConnection connection;
         SqlCommand command;
-        string str = "Data Source=LAPTOP-O8J01RU8;Initial Catalog=PTTKHTTT;Integrated Security=True";
+        string str = "Data Source=.;Initial Catalog=PTTKHTTT;Integrated Security=True";
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
 
-        
+
 
         void XemDS_PHIEUDATPHONG()
         {
@@ -48,77 +50,72 @@ namespace PTTKHTTT
             table.Clear();
             adapter.Fill(table);
             TK_PhieuDB.DataSource = table;
+
         }
+
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*string valuestr = TK_PhieuDB.Rows[e.RowIndex].Cells["LoaiKH"].Value.ToString();
 
-            // So sánh giá trị float với một giá trị nào đó
-            if (valuestr.ToUpper() == "DOAN")
+
+        }
+        void check_btnTour()
+        {
+            string loaiKH;
+
+            loaiKH = TK_PhieuDB.Rows[0].Cells["LOAIKH"].Value.ToString();
+
+            if (loaiKH.ToUpper() == "DOAN")
             {
-                Tour.Enabled = false;
 
-                // Ẩn button
-                Tour.Visible = false;
+                Tour.Visible = false; // ẩn button Tour
             }
             else
             {
-                // Cho phép click vào button
-                Tour.Enabled = true;
+                Tour.Visible = true; // hiển thị button Tour
 
-                // Hiển thị button
-                Tour.Visible = true;
-                //MessageBox.Show("Tính năng chưa được phát triển ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }*/
+            }
         }
 
         private void TK_PDP_Click(object sender, EventArgs e)
         {
-            TK_PhieuDatPhong();
-            if(MaPhieu.Text=="")
+
+            if (MaPhieu.Text == "")
             {
-               // MessageBox.Show("Mã phiếu không hợp lệ hoặc không tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // MessageBox.Show("Mã phiếu không hợp lệ hoặc không tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 XemDS_PHIEUDATPHONG();
+                Tour.Visible = true;
+            }
+            else
+            {
+
+                TK_PhieuDatPhong();
+                check_btnTour();
             }
 
 
-            // Lấy chuỗi text nhập vào từ TextBox
-            // string searchText = MaPhieu.Text;
-
-            //// Duyệt qua từng dòng của DataGridView
-            //for (int i = 0; i < TK_PhieuDB.Rows.Count; i++)
-            //{
-            //    // Lấy giá trị của cột "Tên sản phẩm" tại dòng đang xử lý
-            //    string maphieu = TK_PhieuDB.Rows[i].Cells["MaPhieuDP"].ToString().ToUpper();
-
-            //    // So sánh chuỗi text nhập vào với giá trị của cột "Tên sản phẩm"
-            //    if (MaPhieu.Text.ToUpper() == maphieu)
-            //    {
-            //        TK_PhieuDatPhong();
-            //        return;
-            //    }
-            //}
-
-            //// Hiển thị thông báo nếu không tìm thấy dữ liệu trùng khớp
-            //MessageBox.Show("Mã phiếu không hợp lệ hoặc không tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //XemDS_PHIEUDATPHONG();
         }
 
 
 
         private void SPDV_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Tính năng chưa được phát triển ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Form BanSPDVtaicho = new BanSPDVtaicho();
+            //this.Hide();
+            BanSPDVtaicho.ShowDialog();
+            this.Close();
         }
 
         private void Tour_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Tính năng chưa được phát triển ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
 
         private void BanSanPhamDichVu_Load(object sender, EventArgs e)
         {
             XemDS_PHIEUDATPHONG();
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -126,7 +123,14 @@ namespace PTTKHTTT
 
         }
 
-        // this.Hide();
+       
 
+        private void TroLai_LeTan_Click_1(object sender, EventArgs e)
+        {
+            Form LeTan = new LeTan();
+            this.Hide();
+            LeTan.ShowDialog();
+            this.Close();
+        }
     }
 }

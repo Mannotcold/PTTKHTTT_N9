@@ -1,8 +1,7 @@
-﻿--create database PTTKHTTT;
---use PTTKHTTT;
---go
-select * from nvletan;
-drop table PHIEUDATPHONG
+﻿create database PTTKHTTT;
+use PTTKHTTT;
+go
+
 CREATE TABLE PHIEUDATPHONG
 (
    MaPhieuDP char(10) NOT NULL,
@@ -20,11 +19,8 @@ CREATE TABLE PHIEUDATPHONG
    PRIMARY KEY (MaPhieuDP)
 );
 
-DELETE FROM PHIEUDATPHONG
-WHERE MaPhieuDP = 'PH001';
-DELETE FROM PHIEUDATPHONG
-WHERE MaPhieuDP = 'PH002';
-SELECT * FROM PHIEUDATPHONG;
+
+
 insert into PHIEUDATPHONG (MaPhieuDP, TinhTrangDuyet,NgayLap,NgayDen,NgayDi,SoDemLuuTru, CacYeuCauDacBiet,MaKHDaiDien,TenKHDaiDien,CMNDKHDaiDien, SĐTKHDaiDien, LoaiKH) 
 values 
 ('PH001', 'DA DUYET','2023-05-07','2023-05-07','2023-05-07',2,'KHONG CO','KH001','DANH','12345','4114478448', 'DOAN'),
@@ -51,7 +47,7 @@ values
 ('NV003', 'NV003'),
 ('NV004', 'NV004');
 
-drop TABLE NHANVIEN
+
 CREATE TABLE NHANVIEN
 (
    MANV varchar(5) NOT NULL,
@@ -182,7 +178,7 @@ values
 
 
 -- create----------------------------------------------------
---DROP TABLE HoaDon
+
 CREATE TABLE HoaDon (
   MaHoaDon char(10) PRIMARY KEY,
   NgayLap DATE,
@@ -261,10 +257,9 @@ INSERT INTO HoSoThanhToan( MaHSThanhToan, MaLienPhieuDV)
 VALUES ('HS002', 'LP002');
 
 -- fetch 
-SELECT * FROM HoaDon;
-GO
 
-Drop table DanhSachPhong;
+
+
 Create table DanhSachPhong
 (
 MaPhong varchar(8),
@@ -284,7 +279,7 @@ values
 ('PHG003','PHONG DON',1000000,'Con Trong ','Sach se ','Khong', 'Phong thoang mat sach se','NULL'),
 ('PHG004','PHONG DON',500000,'Da Duoc Thue ','Sach se ','Khong', 'Phong thoang mat sach se','PH003'),
 ('PHG005','PHONG BON',2000000,'Da Duoc Thue ','Sach se ','Khong', 'Phong thoang mat sach se','PH004');
-Drop table QuyDinhKhachSan;
+
 Create table QuyDinhKhachSan
 (
 STT int,
@@ -299,7 +294,7 @@ values
 (3,'Hang Cam ','Khong duoc mang hang cam trong khach san '),
 (4,'Thu tuc tra phong ','Phai kem CMND '),
 (5,'Anh va video ','Nghiem cam viec chup anh trong khach san ');
-Drop table DanhSachKhuyenMai;
+
 Create table DanhSachKhuyenMai
 (
 MaKhuyenMai varchar(8),

@@ -18,30 +18,40 @@ namespace PTTKHTTT
             InitializeComponent();
         }
 
+        //Ket noi server sql
         SqlConnection connection;
-        SqlCommand command;
         string str = "Data Source=.;Initial Catalog=PTTKHTTT;Integrated Security=True";
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
+
+        //Nut dăng nhap
         private void btn_Login_Click(object sender, EventArgs e)
         {
+            //Thuc hien ket noi server
             connection = new SqlConnection(str);
             try
             {
+                //gan u,p la bang tb1 và tb2 tang tinh bao mat;
                 string username = textBox1.Text;
                 string password = textBox2.Text;
+
+                //Mo ket noi server
                 connection.Open();
+                //viet sql
                 string sql = "select * from NHANVIEN JOIN TAIKHOAN on MANV = Ten_TK Where MANV = '" + username + "' AND MATKHAU = '" + password + "' ";
 
                 SqlCommand com = new SqlCommand(sql, connection);
                 //Lấy dữ liệu về từ kết quả câu lệnh trên
                 //ExecuteReader() dùng với select
                 //ExecuteNonquery(); với inserrt update delete
+
+                //doc du lieu tu duoi len
                 SqlDataReader dta = com.ExecuteReader();
 
                 if (dta.Read() == true)
                 {
                     MessageBox.Show("Bạn đã đăng nhập thành công");
+                    //gan account_type băng voi vai tro
                     string account_type = dta.GetString(4);
                     if (account_type == "NVLETAN")
                     {
@@ -74,6 +84,7 @@ namespace PTTKHTTT
             }
             catch (Exception ex)
             {
+                //Khong ket noi duoc voi server thi hien thong bao
                 MessageBox.Show("lỗi kết nối");
             }
 

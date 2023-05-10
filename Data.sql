@@ -1,7 +1,7 @@
-﻿create database PTTKHTTT;
-use PTTKHTTT;
-go
-
+﻿--create database PTTKHTTT;
+--use PTTKHTTT;
+--go
+select * from nvletan;
 drop table PHIEUDATPHONG
 CREATE TABLE PHIEUDATPHONG
 (
@@ -37,7 +37,7 @@ SELECT PDP.MAPHIEUDP AS MAPHIEU, P.MAPHONG AS MAPHONG
 FROM PHIEUDATPHONG PDP JOIN DANHSACHPHONG P ON PDP.MAPHIEUDP = P.MAPHIEUTHUEPHONG
 WHERE PDP.TenKHDaiDien = 'LAM' 
 
-drop table TAIKHOAN
+
 CREATE TABLE TAIKHOAN
 (
    TEN_TK varchar(5) NOT NULL,
@@ -111,13 +111,13 @@ insert into NVLETAN (MANV,VITRI)
 values 
 ('NV003', 'BAN1');
 
-insert into NHANVIEN (MANV, TENNV, SDT, CMND, VAITRO) values ('NV001', 'Le Van Duan', '0123456789', '7684346018', 'Le Tan');
+
 insert into TAIKHOAN (TEN_TK, MATKHAU) values ('NV001', 'NV001');
 
 select * from NHANVIEN JOIN TAIKHOAN on MANV = Ten_TK Where MANV = '" + username + "' AND MATKHAU = '" + password + "'
 select * from NHANVIEN JOIN TAIKHOAN on MANV = Ten_TK Where MANV = 'NV001' AND MATKHAU = 'NV001'
 
-drop table KHACHHANG
+
 CREATE TABLE KHACHHANG
 (
    MAKH char(10) NOT NULL,
@@ -170,8 +170,7 @@ create table DanhSachSanPhamVaDichVu  (
 	ThoiGianMo INT,
 	ThoiGianDong INT
 );
-DELETE FROM DanhSachSanPhamVaDichVu
-WHERE MaDV = 'DV001';
+
 ---DU LIEU DEMO CUA BANH DANH SACH SAN PHAM VA DI VU
 insert into DanhSachSanPhamVaDichVu(MaDV,TenDV,DonGiaDV,ThoiGianMo,ThoiGianDong)
 values

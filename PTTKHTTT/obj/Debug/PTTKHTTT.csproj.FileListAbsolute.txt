@@ -57,3 +57,19 @@ D:\Năm3\K2-N3\PTTKHTTT\Test\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.pdb
 D:\PTTKHTTT_N9\PTTKHTTT\bin\Debug\PTTKHTTT.exe.config
 D:\PTTKHTTT_N9\PTTKHTTT\bin\Debug\PTTKHTTT.exe
 D:\PTTKHTTT_N9\PTTKHTTT\bin\Debug\PTTKHTTT.pdb
+C:\Users\boost\OneDrive\Máy tính\pttk\PTTKHTTT_N9\PTTKHTTT\bin\Debug\PTTKHTTT.exe.config
+C:\Users\boost\OneDrive\Máy tính\pttk\PTTKHTTT_N9\PTTKHTTT\bin\Debug\PTTKHTTT.exe
+C:\Users\boost\OneDrive\Máy tính\pttk\PTTKHTTT_N9\PTTKHTTT\bin\Debug\PTTKHTTT.pdb
+C:\Users\boost\OneDrive\Máy tính\pttk\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.csproj.AssemblyReference.cache
+C:\Users\boost\OneDrive\Máy tính\pttk\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.csproj.SuggestedBindingRedirects.cache
+C:\Users\boost\OneDrive\Máy tính\pttk\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.BanSanPhamDichVu.resources
+C:\Users\boost\OneDrive\Máy tính\pttk\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.BanSPDVtaicho.resources
+C:\Users\boost\OneDrive\Máy tính\pttk\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.DangNhap.resources
+C:\Users\boost\OneDrive\Máy tính\pttk\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.LeTan.resources
+C:\Users\boost\OneDrive\Máy tính\pttk\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.PhieuDatPhong.resources
+C:\Users\boost\OneDrive\Máy tính\pttk\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.PhieuVanChuyenHanhLy.resources
+C:\Users\boost\OneDrive\Máy tính\pttk\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.Properties.Resources.resources
+C:\Users\boost\OneDrive\Máy tính\pttk\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.csproj.GenerateResource.cache
+C:\Users\boost\OneDrive\Máy tính\pttk\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.csproj.CoreCompileInputs.cache
+C:\Users\boost\OneDrive\Máy tính\pttk\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.exe
+C:\Users\boost\OneDrive\Máy tính\pttk\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.pdb

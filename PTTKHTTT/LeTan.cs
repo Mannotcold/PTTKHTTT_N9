@@ -59,5 +59,13 @@ namespace PTTKHTTT
 
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form formDSP = new DanhSachPhong();
+            this.Hide();
+            formDSP.ShowDialog();
+            this.Close();
+        }
     }
 }

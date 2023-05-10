@@ -20,7 +20,7 @@ namespace PTTKHTTT
         }
         SqlConnection connection;
         SqlCommand command;
-        string str = "Data Source=LAPTOP-O8J01RU8;Initial Catalog=PTTKHTTT;Integrated Security=True";
+        string str = "Data Source=.;Initial Catalog=PTTKHTTT;Integrated Security=True";
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
 
@@ -37,11 +37,12 @@ namespace PTTKHTTT
             DSSPDV.DataSource = table;
         }
 
-        SqlConnection connection2;
+        /*SqlConnection connection2;
         SqlCommand command2;
-        string str2 = "Data Source=LAPTOP-O8J01RU8;Initial Catalog=PTTKHTTT;Integrated Security=True";
+        string str2 = "Data Source=.;Initial Catalog=PTTKHTTT;Integrated Security=True";
         SqlDataAdapter adapter2 = new SqlDataAdapter();
         DataTable table2 = new DataTable();
+        
         void XemDS_SPDVduocchon()
         {
             connection2 = new SqlConnection(str2);
@@ -54,7 +55,7 @@ namespace PTTKHTTT
             DSSPDVduocchon.DataSource = table2;
         }
   
-
+        */
         private void DSSPDV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
@@ -63,7 +64,7 @@ namespace PTTKHTTT
         private void BanSPDVtaicho_Load(object sender, EventArgs e)
         {
             XemDS_SPDV();
-            XemDS_SPDVduocchon();
+           // XemDS_SPDVduocchon();
             
         }
 

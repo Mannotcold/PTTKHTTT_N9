@@ -185,7 +185,7 @@ namespace PTTKHTTT
                 //com.ExecuteNonQuery();
                 com.CommandType = CommandType.Text;
 
-                com.CommandText = "Update PHIEUDATPHONG set TinhTrangDuyet = '" + comboBox2.Text.ToString() + "',NgayLap = '" + dateTimePicker3.Text + "',NgayDen = '" + dateTimePicker1.Text + "', NgayDi = '" + dateTimePicker2.Text + "' ,SoDemLuuTru = '" + text8.Text + "', CacYeuCauDacBiet = '" + richTextBox1.Text + "', LoaiKH = '" + comboBox2.Text + "' where MAPHIEUDP = '" + text1.Text + "'";
+                com.CommandText = "Update PHIEUDATPHONG set TinhTrangDuyet = '" + comboBox2.Text.ToString() + "',NgayLap = '" + dateTimePicker3.Text + "',NgayDen = '" + dateTimePicker1.Text + "', NgayDi = '" + dateTimePicker2.Text + "' ,SoDemLuuTru = '" + text8.Text + "', CacYeuCauDacBiet = '" + richTextBox1.Text + "', LoaiKH = '" + comboBox1.Text + "' where MAPHIEUDP = '" + text1.Text + "'";
                 com.Connection = connection;
                 //loaddata();
                 int kq = com.ExecuteNonQuery();

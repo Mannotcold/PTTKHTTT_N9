@@ -113,9 +113,9 @@
             // 
             // TroLai_LeTan
             // 
-            this.TroLai_LeTan.Location = new System.Drawing.Point(49, 506);
+            this.TroLai_LeTan.Location = new System.Drawing.Point(49, 491);
             this.TroLai_LeTan.Name = "TroLai_LeTan";
-            this.TroLai_LeTan.Size = new System.Drawing.Size(75, 23);
+            this.TroLai_LeTan.Size = new System.Drawing.Size(75, 38);
             this.TroLai_LeTan.TabIndex = 12;
             this.TroLai_LeTan.Text = "Trở Lại";
             this.TroLai_LeTan.UseVisualStyleBackColor = true;

@@ -80,7 +80,7 @@ namespace PTTKHTTT
             SqlDataReader dta = com.ExecuteReader();
             while (dta.Read())
             {
-                int madp = dta.GetInt32(0) + 1;
+                int madp = dta.GetInt32(0) + 2;
                 MaPhieuDP = "PH00" + madp.ToString();
                 
             }

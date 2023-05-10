@@ -57,13 +57,13 @@ namespace PTTKHTTT
                         formbellman.ShowDialog();
                         this.Close();
                     }
-                    else if (account_type == "NVBELLMAN")
+                    else if (account_type == "NVBUONGPHONG")
                     {
-                        this.Close();
+                        MessageBox.Show("Tính năng chưa được phát triển ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    else if (account_type == "NVBELLMAN")
+                    else if (account_type == "NVKETOAN")
                     {
-                        this.Close();
+                        MessageBox.Show("Tính năng chưa được phát triển ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                 }

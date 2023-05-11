@@ -147,7 +147,7 @@ namespace PTTKHTTT
                 //com.ExecuteNonQuery();
 
                 com.CommandType = CommandType.Text;
-                com.CommandText = "delete from PHIEUVANCHUYENHANHLY where MAPHIEUVANCHUYENHANHLY = '" + textBox2.Text + "'";
+                com.CommandText = "delete from PHIEUVANCHUYENHANHLY where MAPHIEUVANCHUYENHANHLY = '" + textBox2.Text + "' AND MAPHONG = '" + textBox4.Text + "'";
                 com.Connection = connection;
                 //loaddata();
                 int kq = com.ExecuteNonQuery();

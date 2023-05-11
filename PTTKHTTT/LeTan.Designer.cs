@@ -41,7 +41,7 @@ namespace PTTKHTTT
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(222, 427);
+            this.button4.Location = new System.Drawing.Point(222, 429);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(237, 40);
             this.button4.TabIndex = 18;
@@ -118,7 +118,7 @@ namespace PTTKHTTT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(690, 494);
+            this.ClientSize = new System.Drawing.Size(690, 502);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.BanSPDVgui);
             this.Controls.Add(this.button4);

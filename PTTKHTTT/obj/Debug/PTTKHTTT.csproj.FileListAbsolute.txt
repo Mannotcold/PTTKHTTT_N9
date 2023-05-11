@@ -57,7 +57,7 @@ D:\Năm3\K2-N3\PTTKHTTT\Test\PTTKHTTT_N9\PTTKHTTT\obj\Debug\PTTKHTTT.pdb
 D:\PTTKHTTT_N9\PTTKHTTT\bin\Debug\PTTKHTTT.exe.config
 D:\PTTKHTTT_N9\PTTKHTTT\bin\Debug\PTTKHTTT.exe
 D:\PTTKHTTT_N9\PTTKHTTT\bin\Debug\PTTKHTTT.pdb
-<<<<<<< Updated upstream
+
 C:\Users\cuong\source\repos\PTTKHTTT_N9\PTTKHTTT_N9_QLKS\PTTKHTTT\obj\Debug\PTTKHTTT.csproj.AssemblyReference.cache
 C:\Users\cuong\source\repos\PTTKHTTT_N9\PTTKHTTT_N9_QLKS\PTTKHTTT\obj\Debug\PTTKHTTT.BanSanPhamDichVu.resources
 C:\Users\cuong\source\repos\PTTKHTTT_N9\PTTKHTTT_N9_QLKS\PTTKHTTT\obj\Debug\PTTKHTTT.BanSPDVtaicho.resources
@@ -123,4 +123,5 @@ D:\PTTKHTTT_N9_new\PTTKHTTT\obj\Debug\PTTKHTTT.pdb
 D:\PTTKHTTT_N9_new\PTTKHTTT\bin\Debug\PTTKHTTT.exe.config
 D:\PTTKHTTT_N9_new\PTTKHTTT\bin\Debug\PTTKHTTT.exe
 D:\PTTKHTTT_N9_new\PTTKHTTT\bin\Debug\PTTKHTTT.pdb
->>>>>>> Stashed changes
+
+D:\PTTKHTTT_N9_new\PTTKHTTT\obj\Debug\PTTKHTTT.DanhSachPhong.resources

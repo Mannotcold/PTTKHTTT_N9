@@ -70,7 +70,6 @@ namespace PTTKHTTT
             // 
             this.textBox2.Location = new System.Drawing.Point(314, 241);
             this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(100, 26);
             this.textBox2.TabIndex = 2;
             // 
@@ -177,7 +176,6 @@ namespace PTTKHTTT
             // 
             this.textBox4.Location = new System.Drawing.Point(314, 290);
             this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(100, 26);
             this.textBox4.TabIndex = 14;
             // 
